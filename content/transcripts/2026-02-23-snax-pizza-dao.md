@@ -18,7 +18,8 @@ entities:
   projects: []
 source:
   docx: Movies/bcz stream/BCZyapz/transcripts/bczyapzw_snax.docx
-summary: ''
+summary: |
+  In Episode 9 of BCZ YapZ, Zaal sits down with Snax from Pizza DAO to talk about the global pizza party movement, DAO-native community building, and how crypto energy turns into real-world impact. Snax shares how Pizza DAO was born out of the Clubhouse NFT era in 2020, how they went from idea to treasury to 300+ pizzerias in just three months, and how Bitcoin Pizza Day evolved into a global coordination experiment spanning hundreds of cities.
 action_items: []
 status: raw
 youtube_video_id: 4CpblYpIO8Q

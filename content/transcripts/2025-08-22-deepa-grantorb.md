@@ -21,7 +21,8 @@ source:
   docx: >-
     Movies/bcz stream/BCZyapz/transcripts/BCZ Yaps #1 W_ Deepa from
     GrantOrb.docx
-summary: ''
+summary: |
+  BetterCallZaal kicks off the first episode of BCZ YapZ with Deepa, founder of GrantOrb, a tool that uses AI to make grant writing fast and accessible for creators and nonprofits. We talk about how Deepa entered Web3 through Polygon’s India COVID relief campaign in 2021, saw crypto’s social impact potential, and built GrantOrb to help people turn ideas into funded projects in minutes. This episode dives into how AI and Web3 are reshaping the grant process, why writing funding applications is a bottleneck for artists, and how automation can make fundraising accessible to anyone with a cause.
 action_items: []
 status: raw
 youtube_video_id: 3vUAFwXqdeo

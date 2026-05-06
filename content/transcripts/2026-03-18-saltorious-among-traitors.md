@@ -17,7 +17,8 @@ entities:
   projects: []
 source:
   docx: Movies/bcz stream/BCZyapz/transcripts/bcz yapz with saltorius.docx
-summary: ''
+summary: |
+  In Episode 12 of BCZ YapZ, Zaal sits down with Saltorious.eth, a builder in the Farcaster ecosystem and creator of Among Traders, an AI agent-powered social deduction game. They break down Saltorious’s path from traditional finance into crypto, his experience building across DeFi and Web3 gaming, and why Farcaster has become one of the most powerful environments for builders today. The conversation explores how distribution, identity, and embedded wallets are reshaping product development.
 action_items: []
 status: raw
 youtube_video_id: 0Tevgpr5TUQ

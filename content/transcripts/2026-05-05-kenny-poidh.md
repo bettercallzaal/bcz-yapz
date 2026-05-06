@@ -86,6 +86,9 @@ action_items:
   - Get Kenny's link tree URL for description
   - Brainstorm SMART-goals-style POID acronym for bounty writing
   - 1-on-1 with Kenny on agent-built bounty-writer integration
+youtube_url: https://www.youtube.com/watch?v=IFG_34K7Vig
+youtube_video_id: IFG_34K7Vig
+published: '2026-05-06'
 ---
 
 ## Transcript

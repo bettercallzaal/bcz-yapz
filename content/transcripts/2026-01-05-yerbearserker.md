@@ -17,7 +17,8 @@ entities:
   projects: []
 source:
   docx: Movies/bcz stream/BCZyapz/transcripts/BCZYapZ ep7 w_yerb.docx
-summary: ''
+summary: |
+  In this episode of BCZ YapZ, Zaal sits down with Jordan (aka Yerbearserker), co-founder of Empire Builder, for a wide-ranging conversation on building sustainable onchain ecosystems. Jordan walks through his unconventional path into Web3 - from outdoor education and digital media to token design - and lays out the philosophy behind Empire Builder: helping creators and communities move from idea to durable, generative infrastructure. The discussion digs deep into digital scarcity, creator tokens, incentives, and why value should be built in products and communities first, not price charts.
 action_items: []
 status: raw
 youtube_video_id: EH-FWD7ySKk

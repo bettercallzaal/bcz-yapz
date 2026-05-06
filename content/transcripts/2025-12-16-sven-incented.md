@@ -17,7 +17,8 @@ entities:
   projects: []
 source:
   docx: Movies/bcz stream/BCZyapz/transcripts/bczyapz w_sven.docx
-summary: ''
+summary: |
+  ZM we’re yapping with Sven, founder of Incented - the on-chain protocol redefining how communities coordinate, reward, and create together. From his early experiments in DAOs to engineering a system for equitable contribution, Sven’s approach to decentralized collaboration blends real-world management principles with Web3’s open ethos.
 action_items: []
 status: raw-undated
 youtube_video_id: O7-1weR0Qog

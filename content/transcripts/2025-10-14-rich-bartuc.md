@@ -17,7 +17,8 @@ entities:
   projects: []
 source:
   docx: Movies/bcz stream/BCZyapz/transcripts/bczyapz2w_rich.docx
-summary: ''
+summary: |
+  Rich Bartuc brings the story of PowerPacks to life. From GameStop memes to graded collectibles, he breaks down how a community of collectors and investors turned a moment into a movement. Zaal and Rich go deep on finance, culture, and the psychology of holding through chaos - the true Diamondhands mindset.
 action_items: []
 status: raw
 youtube_video_id: AOcp8Jpyw3k
