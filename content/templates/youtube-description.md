@@ -3,17 +3,22 @@ BCZ YapZ YouTube Description Template
 ======================================
 Fill the {{placeholders}} per episode. Paste the body (everything between the
 START BODY and END BODY markers below) directly into the YouTube description
-field. Paste the tags from `bcz-yapz-youtube-tags.txt` into the YouTube tags
-field separately.
+field. Paste the tags from `youtube-tags.txt` into the YouTube tags field
+separately.
 
-Placeholder map -> transcript frontmatter (content/transcripts/bcz-yapz/*.md):
+Title format (line 1, also used for YouTube video title):
+  `BCZ YapZ Episode {{episode}} w/ {{guest}} from {{guest_org}}`
+  Examples:
+    BCZ YapZ Episode 19 w/ Kenny from POIDH
+    BCZ YapZ Episode 18 w/ Andy Minton from Hangry Animals
+
+Placeholder map -> transcript frontmatter (content/transcripts/*.md):
+  {{episode}}            -> frontmatter.episode (integer)
   {{guest}}              -> frontmatter.guest
   {{guest_alias}}        -> frontmatter.guest_alias (fallback to first name)
-  {{guest_role_at_org}}  -> "{{role}} at {{guest_org}}" e.g. "builder at Clanker"
+  {{guest_role_at_org}}  -> "{{role}} at {{guest_org}}" e.g. "founder of POIDH"
   {{guest_org}}          -> frontmatter.guest_org
   {{core_topic}}         -> from summary
-  {{summary_hook}}       -> first 40-60 char distilled hook from summary
-  {{keyword_1|2}}        -> frontmatter.keywords[0..1]
   {{one_line_context}}   -> who guest is + why this convo matters
   {{paragraph_2}}        -> 3-5 concrete beats from the ep, grounded
   {{paragraph_3}}        -> why it matters for ZAO / builders / musicians
@@ -39,6 +44,7 @@ Empty-field handling:
 
 Rules:
 - 10-15 chapters. First MUST be 0:00. Minimum 60s between chapters.
+- CHAPTERS block at the BOTTOM of the description (after THE ZAO).
 - No emojis. No em dashes. No hashtags in body.
 - Zaal Farcaster handle is @zaal. X + YouTube are @bettercallzaal.
 - ZAO Farcaster channel is /zao (NOT /thezao).
@@ -48,26 +54,13 @@ Rules:
 
 --- START BODY ---
 
-BCZ YapZ w/ {{guest}}: {{summary_hook}}. {{keyword_1}}, {{keyword_2}}.
+BCZ YapZ Episode {{episode}} w/ {{guest}} from {{guest_org}}
 
 I sat down with {{guest}} ({{guest_role_at_org}}) to talk {{core_topic}}. {{one_line_context}}.
 
 {{paragraph_2}}
 
 {{paragraph_3}}
-
-CHAPTERS
-0:00 - Welcome + who is {{guest_alias}}
-{{mm:ss}} - {{chapter_2_title}}
-{{mm:ss}} - {{chapter_3_title}}
-{{mm:ss}} - {{chapter_4_title}}
-{{mm:ss}} - {{chapter_5_title}}
-{{mm:ss}} - {{chapter_6_title}}
-{{mm:ss}} - {{chapter_7_title}}
-{{mm:ss}} - {{chapter_8_title}}
-{{mm:ss}} - {{chapter_9_title}}
-{{mm:ss}} - {{chapter_10_title}}
-{{mm:ss}} - Outro + where to find {{guest_alias}}
 
 MENTIONED IN THIS EPISODE
 People: {{entities.people}}
@@ -86,5 +79,18 @@ YouTube: @bettercallzaal
 THE ZAO
 Site: https://thezao.com
 Farcaster channel: /zao (https://farcaster.xyz/~/channel/zao)
+
+CHAPTERS
+0:00 - Welcome + who is {{guest_alias}}
+{{mm:ss}} - {{chapter_2_title}}
+{{mm:ss}} - {{chapter_3_title}}
+{{mm:ss}} - {{chapter_4_title}}
+{{mm:ss}} - {{chapter_5_title}}
+{{mm:ss}} - {{chapter_6_title}}
+{{mm:ss}} - {{chapter_7_title}}
+{{mm:ss}} - {{chapter_8_title}}
+{{mm:ss}} - {{chapter_9_title}}
+{{mm:ss}} - {{chapter_10_title}}
+{{mm:ss}} - Outro + where to find {{guest_alias}}
 
 --- END BODY ---
