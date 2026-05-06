@@ -5,6 +5,7 @@ import type { Episode } from '@/lib/types'
 import type { Chapter } from '@/lib/chapters'
 import { EpisodeListCard } from './EpisodeListCard'
 import { EpisodeGridCard } from './EpisodeGridCard'
+import { SearchBox } from './SearchBox'
 
 type View = 'list' | 'grid'
 
@@ -33,6 +34,9 @@ export function EpisodeList({ episodes, chaptersBySlug }: EpisodeListProps) {
   return (
     <section className="bg-[#0a1628] px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl">
+        <div className="mb-6">
+          <SearchBox />
+        </div>
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-xl font-semibold text-white">Episodes</h2>
           <div

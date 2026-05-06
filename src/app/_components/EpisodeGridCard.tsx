@@ -41,18 +41,12 @@ export function EpisodeGridCard({ episode, displayIndex }: EpisodeGridCardProps)
     </div>
   )
 
-  if (hasYoutube && frontmatter.youtube_url) {
-    return (
-      <Link
-        href={frontmatter.youtube_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-      >
-        {content}
-      </Link>
-    )
-  }
-
-  return <div className="opacity-60">{content}</div>
+  return (
+    <Link
+      href={`/ep/${episode.slug}`}
+      className={`block ${hasYoutube ? '' : 'opacity-60'}`}
+    >
+      {content}
+    </Link>
+  )
 }
