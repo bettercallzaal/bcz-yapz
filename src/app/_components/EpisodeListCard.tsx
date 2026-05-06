@@ -56,23 +56,25 @@ export function EpisodeListCard({
         </ul>
       ) : null}
       <div className="mt-4 flex flex-wrap gap-2">
+        <Link
+          href={`/ep/${episode.slug}`}
+          className="inline-flex items-center rounded-md bg-[#f5a623] px-3 py-1.5 text-xs font-semibold text-[#0a1628] transition hover:brightness-110"
+        >
+          Open episode
+        </Link>
         {hasYoutube && frontmatter.youtube_url ? (
           <Link
             href={frontmatter.youtube_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-md bg-[#f5a623] px-3 py-1.5 text-xs font-semibold text-[#0a1628] transition hover:brightness-110"
+            className="inline-flex items-center rounded-md border border-white/10 px-3 py-1.5 text-xs font-semibold text-white/80 transition hover:border-white/30"
           >
-            Watch on YouTube
+            YouTube
           </Link>
         ) : (
-          <button
-            type="button"
-            disabled
-            className="inline-flex cursor-not-allowed items-center rounded-md border border-white/10 px-3 py-1.5 text-xs font-semibold text-white/40"
-          >
+          <span className="inline-flex items-center rounded-md border border-white/10 px-3 py-1.5 text-xs font-semibold text-white/40">
             Not yet posted
-          </button>
+          </span>
         )}
         {chapters && chapters.length > 0 ? (
           <button
