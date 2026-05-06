@@ -13,35 +13,52 @@ export function FeaturedEpisode({ episode, displayIndex }: FeaturedEpisodeProps)
   const topics = frontmatter.topics.slice(0, 4)
 
   return (
-    <section className="bg-[#0a1628] px-4 pb-2 pt-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-3xl">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#f5a623]">
+    <section className="bg-[#0a1628] px-4 pb-4 pt-12 sm:px-6 sm:pt-16 lg:px-8">
+      <div className="mx-auto max-w-4xl">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#f5a623]">
           Latest episode
         </p>
         <Link
           href={`/ep/${episode.slug}`}
-          className="group block overflow-hidden rounded-xl border border-white/10 bg-white/5 transition hover:border-white/30"
+          className="group block overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] transition hover:border-white/30 hover:bg-white/[0.06]"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-5">
-            <div className="relative aspect-video bg-black sm:col-span-2 sm:aspect-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="relative aspect-video w-full overflow-hidden bg-black md:aspect-auto md:h-full">
               {thumbnailUrl ? (
-                <Image
-                  src={thumbnailUrl}
-                  alt={`${frontmatter.guest} - BCZ YapZ episode ${epNum}`}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 40vw"
-                  className="object-cover"
-                />
+                <>
+                  <Image
+                    src={thumbnailUrl}
+                    alt={`${frontmatter.guest} - BCZ YapZ episode ${epNum}`}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition group-hover:scale-[1.02]"
+                  />
+                  {hasYoutube ? (
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 transition group-hover:opacity-100">
+                      <div className="rounded-full bg-[#f5a623] p-5 shadow-2xl">
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="h-7 w-7 text-[#0a1628]"
+                          fill="currentColor"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  ) : null}
+                </>
               ) : (
                 <div className="flex h-full items-center justify-center text-xs text-white/40">
                   Recorded - not yet posted
                 </div>
               )}
+              <div className="absolute left-4 top-4 rounded-md bg-black/70 px-3 py-1.5 text-xs font-bold text-white backdrop-blur">
+                EP {epNum}
+              </div>
             </div>
-            <div className="p-5 sm:col-span-3 sm:p-6">
+            <div className="flex flex-col justify-center p-6 sm:p-8">
               <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/55">
-                <span className="font-semibold text-[#f5a623]">Ep {epNum}</span>
-                <span>·</span>
                 <span>{episode.displayDate ?? 'TBD'}</span>
                 {frontmatter.duration_min ? (
                   <>
@@ -56,19 +73,21 @@ export function FeaturedEpisode({ episode, displayIndex }: FeaturedEpisodeProps)
                   </>
                 ) : null}
               </div>
-              <h3 className="mt-1 text-2xl font-bold leading-tight text-white">
+              <h3 className="mt-2 text-3xl font-bold leading-tight text-white sm:text-4xl">
                 {frontmatter.guest}
                 {frontmatter.guest_org ? (
-                  <span className="text-white/55"> · {frontmatter.guest_org}</span>
+                  <span className="block text-base font-semibold text-white/55 sm:text-lg">
+                    {frontmatter.guest_org}
+                  </span>
                 ) : null}
               </h3>
               {frontmatter.summary ? (
-                <p className="mt-3 line-clamp-4 text-sm text-white/75 sm:text-[15px]">
+                <p className="mt-4 line-clamp-5 text-sm text-white/75 sm:text-base">
                   {frontmatter.summary}
                 </p>
               ) : null}
               {topics.length > 0 ? (
-                <ul className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                <ul className="mt-4 flex flex-wrap gap-1.5 text-[11px]">
                   {topics.map((topic) => (
                     <li
                       key={topic}
@@ -79,15 +98,19 @@ export function FeaturedEpisode({ episode, displayIndex }: FeaturedEpisodeProps)
                   ))}
                 </ul>
               ) : null}
-              <div className="mt-5 flex flex-wrap gap-2">
-                <span className="inline-flex items-center rounded-md bg-[#f5a623] px-3 py-1.5 text-xs font-semibold text-[#0a1628] transition group-hover:brightness-110">
-                  Open episode -&gt;
-                </span>
-                {hasYoutube && frontmatter.youtube_url ? (
-                  <span className="inline-flex items-center rounded-md border border-white/15 px-3 py-1.5 text-xs font-semibold text-white/80">
-                    Watch on YouTube
-                  </span>
-                ) : null}
+              <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#f5a623] transition group-hover:gap-3">
+                Open episode
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
               </div>
             </div>
           </div>
