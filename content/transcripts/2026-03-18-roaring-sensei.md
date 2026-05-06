@@ -16,7 +16,8 @@ entities:
   projects: []
 source:
   docx: Movies/bcz stream/BCZyapz/transcripts/bczyapz w_roaring sensai.docx
-summary: ''
+summary: |
+  In Episode 11 of BCZ YapZ, BetterCallZaal sits down with Roaring Sensei for a wide-ranging conversation that moves from martial arts philosophy to GameStop culture, community building, and the realities of growing an online presence.
 action_items: []
 status: raw
 youtube_video_id: DIeav3o8t9M

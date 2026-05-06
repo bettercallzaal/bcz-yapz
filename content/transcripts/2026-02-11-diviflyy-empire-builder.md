@@ -19,7 +19,8 @@ source:
   docx: >-
     Movies/bcz stream/BCZyapz/transcripts/BCZ YapZ ep. 7 w_Diviflyy from Empire
     Builder.docx
-summary: ''
+summary: |
+  In this episode of BCZ YapZ, Zaal sits down with Adrian (aka Divifly), the lead developer behind Empire Builder, for a deep dive into the technical infrastructure and future roadmap of the platform. Adrian shares his long history in the cryptocurrency space-from mining Dogecoin on a laptop in 2013 and navigating the 2017 ICO boom to his work as a technical writer for major protocols like Scroll and Rootstock.
 action_items: []
 status: raw
 youtube_video_id: 0tyVpLGVxkA

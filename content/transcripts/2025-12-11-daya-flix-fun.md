@@ -17,7 +17,8 @@ entities:
   projects: []
 source:
   docx: Movies/bcz stream/BCZyapz/transcripts/flixfunbczyaps.docx
-summary: ''
+summary: |
+  BetterCallZaal sits with Daya, co contributor at Flix.Fun, for a detailed look at the new homepage system, the upcoming meDaya node, and the shift from Cosmos to Base. Daya explains how Flix.Fun evolved from years of work in the Cosmos ecosystem, why creator owned pages matter, and how their new Base deployment enables fast onboarding with email and gasless transactions. The conversation covers live streaming infrastructure, content distribution, video embeds, and what creators gain from hosting pages onchain.
 action_items: []
 status: raw
 youtube_video_id: 9ePU4qEc67Y

@@ -17,7 +17,8 @@ entities:
   projects: []
 source:
   docx: 'Movies/bcz stream/BCZyapz/transcripts/bczyapz w:ali.docx'
-summary: ''
+summary: |
+  In Episode 13 of BCZ YapZ, Zaal sits down with Ali, founder of Inflynce, to break down how one of the earliest Farcaster marketing tools came to life. Ali shares his journey from trading crypto and losing everything to contributing in a Discord, earning a role through pure effort, and eventually building Inflynce after getting rejected from over 180 job applications. The conversation highlights how real opportunity in Web3 often comes from participation, not credentials.
 action_items: []
 status: raw
 youtube_video_id: WTyafqHKQqM

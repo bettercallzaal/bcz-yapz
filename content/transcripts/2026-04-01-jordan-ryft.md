@@ -17,7 +17,8 @@ entities:
   projects: []
 source:
   docx: Movies/bcz stream/BCZyapz/transcripts/BCZ YapZ w_ Jordan.docx
-summary: ''
+summary: |
+  This conversation dives deep into the evolution of building in Web3-from early crypto experiences and NFT markets to the emerging reality of agent-driven systems and mechanism design. Zaal sits down with Jordan (JK Charters) to unpack lessons from past cycles, including the rise of meme coins, NFT liquidity challenges, and the breakdown of long-term holding behavior.
 action_items: []
 status: raw
 youtube_video_id: IbhHxFR4yxE
