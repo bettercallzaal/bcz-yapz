@@ -3,18 +3,18 @@ slug: 2026-02-23-giu-pinetree
 youtube_video_id: loSOniPcJx0
 ep: 10
 current_title: BCZ YapZ – Episode 10 w/GIU from Pinetree
-new_title: BCZ YapZ Episode 10 w/ Juliano from Pinetree
+new_title: BCZ YapZ – Episode 10 w/GIU from Pinetree
 chapter_count: 12
 upgraded_body_chars: 1940
 ---
 
 ## New YouTube title (replace existing)
 
-BCZ YapZ Episode 10 w/ Juliano from Pinetree
+BCZ YapZ – Episode 10 w/GIU from Pinetree
 
 ## Upgraded YouTube description body (replace existing)
 
-BCZ YapZ Episode 10 w/ Juliano from Pinetree
+BCZ YapZ – Episode 10 w/GIU from Pinetree
 
 In this episode of BetterCallZaal Yaps, Zaal sits down with Guiliano from Pine Tree to unpack his journey from Brazil to MIT, early AI research, Bitcoin discovery, and building startups in the Bay Area.
 
