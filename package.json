@@ -1,0 +1,32 @@
+{
+  "name": "bcz-yapz",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BCZ YapZ - long-form interview show archive. Transcripts, chapters, episode list.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "ingest:bonfire": "python3 scripts/generate-bonfire-ingest.py"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "^16.2.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^3.2.4"
+  }
+}
