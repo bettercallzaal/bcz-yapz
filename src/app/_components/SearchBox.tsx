@@ -119,6 +119,22 @@ export function SearchBox() {
 
   return (
     <div ref={containerRef} className="relative w-full">
+      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-white/45">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          fill="none"
+          className="h-4 w-4"
+        >
+          <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.6" />
+          <path
+            d="M14 14l3 3"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
       <input
         type="search"
         value={query}
@@ -127,8 +143,8 @@ export function SearchBox() {
           loadIndex()
           setOpen(true)
         }}
-        placeholder="Search transcripts..."
-        className="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/40 focus:border-[#f5a623] focus:outline-none"
+        placeholder="Search every transcript..."
+        className="w-full rounded-lg border border-white/10 bg-white/5 py-2.5 pl-10 pr-3 text-sm text-white placeholder-white/40 transition focus:border-[#f5a623] focus:outline-none focus:ring-1 focus:ring-[#f5a623]/40"
         aria-label="Search transcripts"
       />
       {open && query.trim().length > 0 ? (
