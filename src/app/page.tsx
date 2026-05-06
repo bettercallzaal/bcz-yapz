@@ -1,4 +1,5 @@
 import { HeroSection } from './_components/HeroSection'
+import { FeaturedEpisode } from './_components/FeaturedEpisode'
 import { EpisodeList } from './_components/EpisodeList'
 import { FollowFooter } from './_components/FollowFooter'
 import { getAllEpisodes } from '@/lib/episodes'
@@ -13,10 +14,15 @@ export default async function BczYapzPage() {
     chaptersBySlug[ep.slug] = await parseChapters(ep.slug)
   }
 
+  const [latest, ...rest] = episodes
+
   return (
     <main className="min-h-screen bg-[#0a1628]">
       <HeroSection />
-      <EpisodeList episodes={episodes} chaptersBySlug={chaptersBySlug} />
+      {latest ? (
+        <FeaturedEpisode episode={latest} displayIndex={episodes.length} />
+      ) : null}
+      <EpisodeList episodes={rest} chaptersBySlug={chaptersBySlug} />
       <FollowFooter />
     </main>
   )
