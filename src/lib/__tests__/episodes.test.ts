@@ -47,7 +47,7 @@ describe('getAllEpisodes', () => {
         expect(ep.thumbnailUrl).toBe(ep.frontmatter.thumbnail_override)
       } else if (ep.frontmatter.youtube_video_id) {
         expect(ep.thumbnailUrl).toBe(
-          `https://img.youtube.com/vi/${ep.frontmatter.youtube_video_id}/hqdefault.jpg`
+          `https://i.ytimg.com/vi/${ep.frontmatter.youtube_video_id}/maxresdefault.jpg`
         )
       } else {
         expect(ep.thumbnailUrl).toBeNull()

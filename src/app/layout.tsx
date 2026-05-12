@@ -32,6 +32,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: BCZ_YAPZ_PAGE.title,
   description: BCZ_YAPZ_PAGE.tagline,
+  manifest: '/manifest.webmanifest',
+  themeColor: '#0a1628',
   openGraph: {
     title: BCZ_YAPZ_PAGE.title,
     description: BCZ_YAPZ_PAGE.tagline,
