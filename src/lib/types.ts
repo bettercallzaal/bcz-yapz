@@ -46,6 +46,10 @@ export const EpisodeFrontmatterSchema = z.object({
   youtube_url: z.string().url().optional(),
   youtube_video_id: z.string().optional(),
   thumbnail_override: z.string().nullable().optional(),
+  audio_url: z.string().url().optional(),
+  audio_bytes: z.number().int().positive().optional(),
+  audio_duration_sec: z.number().int().positive().optional(),
+  audio_mime: z.string().optional(),
 })
 
 export type EpisodeFrontmatter = z.infer<typeof EpisodeFrontmatterSchema>
