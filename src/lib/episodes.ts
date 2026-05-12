@@ -9,7 +9,11 @@ function slugFromFilename(filename: string): string {
   return filename.replace(/\.md$/, '')
 }
 
-function buildThumbnailUrl(videoId: string | undefined): string | null {
+function buildThumbnailUrl(
+  videoId: string | undefined,
+  override: string | null | undefined
+): string | null {
+  if (override) return override
   if (!videoId) return null
   return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
 }
@@ -54,7 +58,10 @@ export async function getAllEpisodes(): Promise<Episode[]> {
       frontmatter,
       hasYoutube: Boolean(frontmatter.youtube_url),
       displayDate: pickDisplayDate(frontmatter.published, frontmatter.date),
-      thumbnailUrl: buildThumbnailUrl(frontmatter.youtube_video_id),
+      thumbnailUrl: buildThumbnailUrl(
+        frontmatter.youtube_video_id,
+        frontmatter.thumbnail_override
+      ),
     })
   }
 
