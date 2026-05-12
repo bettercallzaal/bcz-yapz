@@ -43,6 +43,16 @@ export function HeroSection() {
         </p>
         <div className="mt-7 flex flex-wrap gap-2">
           <Link
+            href="/live"
+            className="inline-flex items-center gap-2 rounded-md bg-[#9146ff] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+          >
+            <span className="relative inline-flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
+            </span>
+            Watch Live
+          </Link>
+          <Link
             href={youtubeChannel}
             target="_blank"
             rel="noopener noreferrer"
