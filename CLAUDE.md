@@ -29,8 +29,9 @@ Deps: `gray-matter`, `zod`, `next`, `react`, `react-dom`. That's it.
 2. Validate locally: `npm run typecheck && npm run test`
 3. After publishing on YouTube, fill `youtube_url` + `youtube_video_id`
 4. Generate description via global Claude skill: `/bcz-yapz-description <slug>` - writes to `content/youtube-descriptions/<slug>.md`
-5. Regenerate Bonfire ingest: `npm run ingest:bonfire`
-6. Commit + push. Vercel autodeploys to bczyapz.com.
+5. Rip MP3 + upload to Storj: `npm run rip:audio -- --slug <slug>` (needs Storj env vars - see `scripts/PODCAST-SETUP.md`). Patches frontmatter with `audio_url`/`audio_bytes`/`audio_duration_sec`.
+6. Regenerate Bonfire ingest: `npm run ingest:bonfire`
+7. Commit + push. Vercel autodeploys to bczyapz.com and `/feed.xml` picks up the new audio for Apple/Spotify.
 
 ## Skill location
 
