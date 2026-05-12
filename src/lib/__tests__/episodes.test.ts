@@ -40,10 +40,12 @@ describe('getAllEpisodes', () => {
     }
   })
 
-  it('returns thumbnailUrl built from youtube_video_id when present', async () => {
+  it('returns thumbnailUrl from override, video_id, or null', async () => {
     const episodes = await getAllEpisodes()
     for (const ep of episodes) {
-      if (ep.frontmatter.youtube_video_id) {
+      if (ep.frontmatter.thumbnail_override) {
+        expect(ep.thumbnailUrl).toBe(ep.frontmatter.thumbnail_override)
+      } else if (ep.frontmatter.youtube_video_id) {
         expect(ep.thumbnailUrl).toBe(
           `https://img.youtube.com/vi/${ep.frontmatter.youtube_video_id}/hqdefault.jpg`
         )
