@@ -15,7 +15,7 @@ function buildThumbnailUrl(
 ): string | null {
   if (override) return override
   if (!videoId) return null
-  return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+  return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
 }
 
 function pickDisplayDate(
