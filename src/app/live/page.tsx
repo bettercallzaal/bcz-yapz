@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { LivePlayer } from './LivePlayer'
+import { LiveStage } from './LiveStage'
 
 const SITE_URL = 'https://bczyapz.com'
 
@@ -45,39 +45,38 @@ export default function LivePage() {
       </header>
 
       <section className="px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            BCZ YapZ Live
-          </h1>
-          <p className="mt-2 text-sm text-white/65 sm:text-base">
-            Streaming on twitch.tv/bettercallzaal. If offline, the player will
-            show the channel&apos;s offline panel.
-          </p>
-
-          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-black">
-            <LivePlayer />
-            <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-xs">
-              <span className="text-white/70">@bettercallzaal</span>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://twitch.tv/bettercallzaal"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#f5a623] hover:underline"
-                >
-                  Open on Twitch
-                </a>
-                <a
-                  href="https://twitch.tv/bettercallzaal/chat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/70 hover:text-[#f5a623]"
-                >
-                  Open chat
-                </a>
-              </div>
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                BCZ YapZ Live
+              </h1>
+              <p className="mt-2 text-sm text-white/65 sm:text-base">
+                Streaming on twitch.tv/bettercallzaal. Offline panel shows when
+                not live.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 text-xs">
+              <a
+                href="https://twitch.tv/bettercallzaal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-white/85 transition hover:border-[#f5a623]/60 hover:text-[#f5a623]"
+              >
+                Open on Twitch
+              </a>
+              <a
+                href="https://twitch.tv/bettercallzaal/chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-white/85 transition hover:border-[#f5a623]/60 hover:text-[#f5a623]"
+              >
+                Pop-out chat
+              </a>
             </div>
           </div>
+
+          <LiveStage />
         </div>
       </section>
     </main>

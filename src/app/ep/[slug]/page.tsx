@@ -8,6 +8,7 @@ import { parseTranscript, formatTimestamp } from '@/lib/transcript'
 import { relatedEpisodes } from '@/lib/related'
 import { BCZ_YAPZ_PAGE } from '@/lib/config'
 import { ShareButtons } from '@/app/_components/ShareButtons'
+import { SeekButton } from '@/app/_components/SeekButton'
 
 const SITE_URL = 'https://bczyapz.com'
 
@@ -142,10 +143,12 @@ export default async function EpisodePage({ params }: PageProps) {
         <section className="bg-[#0a1628] px-4 py-6 sm:px-6 lg:px-8">
           <div className="mx-auto aspect-video max-w-3xl overflow-hidden rounded-lg border border-white/10 bg-black">
             <iframe
-              src={`https://www.youtube-nocookie.com/embed/${youtubeId}`}
+              id="bcz-yt-player"
+              src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1`}
               title={`BCZ YapZ ep ${epNum} with ${fm.guest}`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              loading="lazy"
               className="h-full w-full"
             />
           </div>
@@ -169,29 +172,31 @@ export default async function EpisodePage({ params }: PageProps) {
         <section className="bg-[#0a1628] px-4 py-6 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-lg font-semibold">Chapters</h2>
+            <p className="mt-1 text-xs text-white/50">
+              Click any chapter to jump to that point in the player.
+            </p>
             <ol className="mt-3 space-y-1 font-mono text-sm">
-              {chapters.map((ch) => (
-                <li key={`${ch.timestamp}-${ch.title}`}>
-                  {youtubeId ? (
-                    <Link
-                      href={`https://youtu.be/${youtubeId}?t=${chapterToSec(ch.timestamp)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white/80 hover:text-[#f5a623]"
-                    >
-                      <span className="text-[#f5a623]">{ch.timestamp}</span>
-                      <span className="mx-2">-</span>
-                      <span>{ch.title}</span>
-                    </Link>
-                  ) : (
-                    <>
-                      <span className="text-[#f5a623]">{ch.timestamp}</span>
-                      <span className="mx-2">-</span>
-                      <span className="text-white/80">{ch.title}</span>
-                    </>
-                  )}
-                </li>
-              ))}
+              {chapters.map((ch) => {
+                const sec = chapterToSec(ch.timestamp)
+                const label = `${ch.timestamp}  -  ${ch.title}`
+                return (
+                  <li key={`${ch.timestamp}-${ch.title}`}>
+                    {youtubeId ? (
+                      <SeekButton
+                        sec={sec}
+                        label={label}
+                        className="text-left text-white/80 transition hover:text-[#f5a623]"
+                      />
+                    ) : (
+                      <>
+                        <span className="text-[#f5a623]">{ch.timestamp}</span>
+                        <span className="mx-2">-</span>
+                        <span className="text-white/80">{ch.title}</span>
+                      </>
+                    )}
+                  </li>
+                )
+              })}
             </ol>
           </div>
         </section>
@@ -225,14 +230,11 @@ export default async function EpisodePage({ params }: PageProps) {
               {transcript.paragraphs.map((para, idx) => (
                 <p key={`${para.startSec}-${idx}`} id={`t-${para.startSec}`}>
                   {youtubeId ? (
-                    <Link
-                      href={`https://youtu.be/${youtubeId}?t=${para.startSec}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <SeekButton
+                      sec={para.startSec}
+                      label={`[${formatTimestamp(para.startSec)}]`}
                       className="mr-2 inline-block font-mono text-xs text-[#f5a623] hover:underline"
-                    >
-                      [{formatTimestamp(para.startSec)}]
-                    </Link>
+                    />
                   ) : (
                     <span className="mr-2 inline-block font-mono text-xs text-white/50">
                       [{formatTimestamp(para.startSec)}]
