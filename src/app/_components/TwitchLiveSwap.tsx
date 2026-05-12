@@ -12,6 +12,12 @@ export function TwitchLiveSwap({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setParent(window.location.hostname)
 
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('live') === '1') {
+      setIsLive(true)
+      return
+    }
+
     let cancelled = false
 
     async function check() {
