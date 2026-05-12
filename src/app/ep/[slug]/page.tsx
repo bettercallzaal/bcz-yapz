@@ -7,6 +7,14 @@ import { parseChapters } from '@/lib/chapters'
 import { parseTranscript, formatTimestamp } from '@/lib/transcript'
 import { relatedEpisodes } from '@/lib/related'
 import { BCZ_YAPZ_PAGE } from '@/lib/config'
+import { ShareButtons } from '@/app/_components/ShareButtons'
+
+const SITE_URL = 'https://bczyapz.com'
+
+function isoDuration(min: number | undefined): string | undefined {
+  if (!min) return undefined
+  return `PT${min}M`
+}
 
 export const revalidate = 3600
 
@@ -65,9 +73,46 @@ export default async function EpisodePage({ params }: PageProps) {
 
   const youtubeId = fm.youtube_video_id
   const youtubeUrl = fm.youtube_url
+  const episodeUrl = `${SITE_URL}/ep/${slug}`
+
+  const shareTitle = `${fm.guest}${fm.guest_org ? ` (${fm.guest_org})` : ''} on BCZ YapZ`
+
+  const episodeLd: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'PodcastEpisode',
+    name: shareTitle,
+    url: episodeUrl,
+    description: fm.summary || `${fm.guest} on BCZ YapZ`,
+    datePublished: ep.displayDate ?? undefined,
+    timeRequired: isoDuration(fm.duration_min),
+    image: ep.thumbnailUrl ?? undefined,
+    inLanguage: fm.language ?? 'en',
+    partOfSeries: {
+      '@type': 'PodcastSeries',
+      name: 'BCZ YapZ',
+      url: SITE_URL,
+    },
+    author: {
+      '@type': 'Person',
+      name: fm.host,
+      url: BCZ_YAPZ_PAGE.hostFarcaster,
+    },
+  }
+
+  if (youtubeUrl) {
+    episodeLd.associatedMedia = {
+      '@type': 'MediaObject',
+      contentUrl: youtubeUrl,
+      embedUrl: youtubeId ? `https://www.youtube.com/embed/${youtubeId}` : undefined,
+    }
+  }
 
   return (
     <main className="min-h-screen bg-[#0a1628] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeLd) }}
+      />
       <header className="border-b border-white/10 bg-[#0a1628] px-4 py-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <Link href="/" className="text-xs text-white/60 hover:text-[#f5a623]">
@@ -87,6 +132,9 @@ export default async function EpisodePage({ params }: PageProps) {
           {fm.summary ? (
             <p className="mt-3 text-sm text-white/80 sm:text-base">{fm.summary}</p>
           ) : null}
+          <div className="mt-5">
+            <ShareButtons url={episodeUrl} text={shareTitle} />
+          </div>
         </div>
       </header>
 

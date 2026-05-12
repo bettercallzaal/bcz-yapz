@@ -14,6 +14,7 @@
     "ingest:bonfire": "python3 scripts/generate-bonfire-ingest.py"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "flexsearch": "^0.8.212",
     "gray-matter": "^4.0.3",
     "next": "^16.2.0",
