@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
-"""Rip MP3 from each episode's YouTube URL, upload to Storj, patch frontmatter.
+"""Rip MP3 from each episode's YouTube URL, upload to S3-compatible host, patch frontmatter.
 
 Reads content/transcripts/*.md, for each episode with `youtube_url` but no
-`audio_url`, downloads the audio via yt-dlp, uploads to Storj via the S3
-gateway, computes byte length + duration, and writes audio_url/audio_bytes/
-audio_duration_sec back into the frontmatter.
+`audio_url`, downloads the audio via yt-dlp, uploads to the configured S3
+host (Cloudflare R2 by default), computes byte length + duration, and writes
+audio_url/audio_bytes/audio_duration_sec back into the frontmatter.
 
 Env required:
-  STORJ_ACCESS_KEY        S3-compatible access key id from Storj
-  STORJ_SECRET_KEY        S3-compatible secret access key from Storj
-  STORJ_BUCKET            Bucket name (e.g., bcz-yapz-audio)
-  STORJ_PUBLIC_PREFIX     Public URL prefix for shared files
-                          (e.g., https://link.storjshare.io/raw/<accessgrant>/bcz-yapz-audio)
-  STORJ_ENDPOINT          Optional. Defaults to https://gateway.storjshare.io
+  AUDIO_HOST_ACCESS_KEY     S3-compatible access key id
+  AUDIO_HOST_SECRET_KEY     S3-compatible secret access key
+  AUDIO_HOST_BUCKET         Bucket name (e.g., bcz-yapz-audio)
+  AUDIO_HOST_PUBLIC_PREFIX  Public URL prefix for objects
+                            (R2: https://pub-<hash>.r2.dev)
+                            (Storj: https://link.storjshare.io/raw/<grant>/<bucket>)
+  AUDIO_HOST_ENDPOINT       S3 API endpoint URL
+                            (R2: https://<accountid>.r2.cloudflarestorage.com)
+                            (Storj: https://gateway.storjshare.io)
 
 Optional flags:
   --slug <slug>       Rip a single episode by slug
@@ -94,7 +97,13 @@ def patch_frontmatter(path: Path, updates: dict[str, str | int]) -> None:
 
 
 def ensure_env() -> dict[str, str]:
-    required = ["STORJ_ACCESS_KEY", "STORJ_SECRET_KEY", "STORJ_BUCKET", "STORJ_PUBLIC_PREFIX"]
+    required = [
+        "AUDIO_HOST_ACCESS_KEY",
+        "AUDIO_HOST_SECRET_KEY",
+        "AUDIO_HOST_BUCKET",
+        "AUDIO_HOST_PUBLIC_PREFIX",
+        "AUDIO_HOST_ENDPOINT",
+    ]
     missing = [k for k in required if not os.environ.get(k)]
     if missing:
         die(
@@ -103,11 +112,11 @@ def ensure_env() -> dict[str, str]:
             + ". See scripts/PODCAST-SETUP.md."
         )
     return {
-        "access_key": os.environ["STORJ_ACCESS_KEY"],
-        "secret_key": os.environ["STORJ_SECRET_KEY"],
-        "bucket": os.environ["STORJ_BUCKET"],
-        "prefix": os.environ["STORJ_PUBLIC_PREFIX"].rstrip("/"),
-        "endpoint": os.environ.get("STORJ_ENDPOINT", "https://gateway.storjshare.io"),
+        "access_key": os.environ["AUDIO_HOST_ACCESS_KEY"],
+        "secret_key": os.environ["AUDIO_HOST_SECRET_KEY"],
+        "bucket": os.environ["AUDIO_HOST_BUCKET"],
+        "prefix": os.environ["AUDIO_HOST_PUBLIC_PREFIX"].rstrip("/"),
+        "endpoint": os.environ["AUDIO_HOST_ENDPOINT"],
     }
 
 
@@ -173,7 +182,6 @@ def upload(s3, bucket: str, key: str, path: Path) -> None:
         ExtraArgs={
             "ContentType": "audio/mpeg",
             "CacheControl": "public, max-age=31536000",
-            "ACL": "public-read",
         },
     )
 
