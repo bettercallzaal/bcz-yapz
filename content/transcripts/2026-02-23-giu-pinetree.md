@@ -6,6 +6,9 @@ guest: Juliano
 guest_alias: GIU
 guest_origin: Brazil
 guest_org: Pinetree
+guest_links:
+  - "farcaster: @giu"
+  - "farcaster: @pinetree"
 host: Zaal
 date: 2026-02-23T00:00:00.000Z
 youtube_url: 'https://youtu.be/loSOniPcJx0'

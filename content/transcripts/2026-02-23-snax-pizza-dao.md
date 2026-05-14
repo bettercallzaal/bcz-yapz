@@ -3,8 +3,9 @@ title: BCZ YapZ w/SNAX (Pizza DAO)
 show: BCZ YapZ
 episode: 9
 guest: SNAX
-guest_handle: snax.eth
 guest_org: Pizza DAO
+guest_links:
+  - "farcaster: @snax.eth"
 host: Zaal
 date: 2026-02-23T00:00:00.000Z
 youtube_url: 'https://youtu.be/4CpblYpIO8Q'
