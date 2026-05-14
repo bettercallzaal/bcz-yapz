@@ -4,6 +4,8 @@ show: BCZ YapZ
 episode: 7
 guest: Yerbearserker
 guest_org: Empire Builder
+guest_links:
+  - "farcaster: @yerbearserker"
 host: Zaal
 date: 2026-01-05T00:00:00.000Z
 youtube_url: 'https://youtu.be/EH-FWD7ySKk'

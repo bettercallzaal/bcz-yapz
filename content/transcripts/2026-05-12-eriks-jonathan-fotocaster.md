@@ -8,9 +8,8 @@ guest_links:
   - "farcaster: @eriks"
   - "x: @eriksx"
   - "instagram: Erik P. Smit"
-  - "farcaster: @jlcoulton"
-  - "x: @jlcoulton"
-  - "instagram: @jlcoulton"
+  - "farcaster: @jonathancolton"
+  - "x: @jlcolton"
 host: Zaal
 date: 2026-05-12T00:00:00.000Z
 format: video-podcast

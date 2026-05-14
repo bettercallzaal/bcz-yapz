@@ -6,6 +6,7 @@ guest: Nikoline Arns
 guest_alias: Nikoline
 guest_org: Hubs Network
 guest_links:
+  - 'farcaster: @nikoline'
   - 'x: https://x.com/nikoline_nik'
   - 'linkedin: https://linkedin.com/in/nikoline-nik'
   - 'paragraph: https://paragraph.xyz/@nikoline'

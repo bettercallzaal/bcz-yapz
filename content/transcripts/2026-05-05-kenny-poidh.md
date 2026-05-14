@@ -6,8 +6,9 @@ guest: Kenny
 guest_alias: Kenny
 guest_org: POIDH
 guest_links:
-  - "x: @kennyiscoding"
   - "farcaster: @kenny"
+  - "x: @kennyistyping"
+  - "farcaster: @poidhbot"
   - "x: @poidhxyz"
   - "web: poidh.xyz"
 host: Zaal
