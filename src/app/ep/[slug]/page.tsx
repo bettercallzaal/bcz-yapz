@@ -134,7 +134,12 @@ export default async function EpisodePage({ params }: PageProps) {
             <p className="mt-3 text-sm text-white/80 sm:text-base">{fm.summary}</p>
           ) : null}
           <div className="mt-5">
-            <ShareButtons url={episodeUrl} text={shareTitle} />
+            <ShareButtons
+              url={episodeUrl}
+              guestName={fm.guest}
+              guestOrg={fm.guest_org}
+              guestLinks={fm.guest_links}
+            />
           </div>
         </div>
       </header>
