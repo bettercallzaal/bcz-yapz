@@ -4,6 +4,8 @@ show: BCZ YapZ
 episode: 2
 guest: Rich Bartuc
 guest_org: PowerPacks Diamondhands Club
+guest_links:
+  - "x: @richbartuc"
 host: Zaal
 date: 2025-10-14T00:00:00.000Z
 youtube_url: 'https://youtu.be/AOcp8Jpyw3k'

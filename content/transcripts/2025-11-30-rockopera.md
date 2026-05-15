@@ -3,6 +3,8 @@ title: BCZ YapZ w/Rock Opera
 show: BCZ YapZ
 episode: 4
 guest: Rock Opera
+guest_links:
+  - "farcaster: @rockopera.eth"
 host: Zaal
 date: 2025-11-30T00:00:00.000Z
 youtube_url: 'https://youtu.be/43GPWLE6W5Q'

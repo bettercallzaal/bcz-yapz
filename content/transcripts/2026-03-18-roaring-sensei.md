@@ -3,6 +3,8 @@ title: BCZ YapZ w/Roaring Sensei
 show: BCZ YapZ
 episode: 11
 guest: Roaring Sensei
+guest_links:
+  - "x: @roaringsensei"
 host: Zaal
 date: 2026-03-18T00:00:00.000Z
 youtube_url: 'https://youtu.be/DIeav3o8t9M'

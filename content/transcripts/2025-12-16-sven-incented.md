@@ -4,6 +4,8 @@ show: BCZ YapZ
 episode: 6
 guest: Sven
 guest_org: Incented
+guest_links:
+  - "x: @iamsvenh"
 host: Zaal
 date: 2025-12-16T00:00:00.000Z
 youtube_url: 'https://youtu.be/O7-1weR0Qog'
