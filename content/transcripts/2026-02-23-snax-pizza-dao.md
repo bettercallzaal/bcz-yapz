@@ -6,6 +6,7 @@ guest: SNAX
 guest_org: Pizza DAO
 guest_links:
   - "farcaster: @snax.eth"
+  - "x: @snack_man"
 host: Zaal
 date: 2026-02-23T00:00:00.000Z
 youtube_url: 'https://youtu.be/4CpblYpIO8Q'

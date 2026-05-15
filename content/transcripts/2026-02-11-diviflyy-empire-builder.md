@@ -6,6 +6,7 @@ guest: Diviflyy
 guest_org: Empire Builder
 guest_links:
   - "farcaster: @diviflyy"
+  - "x: @diviflyy"
 host: Zaal
 date: 2026-02-11T00:00:00.000Z
 youtube_url: 'https://youtu.be/0tyVpLGVxkA'
