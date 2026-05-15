@@ -8,6 +8,7 @@ guest_origin: Brazil
 guest_org: Pinetree
 guest_links:
   - "farcaster: @giu"
+  - "x: @giacaglia"
   - "farcaster: @pinetree"
 host: Zaal
 date: 2026-02-23T00:00:00.000Z

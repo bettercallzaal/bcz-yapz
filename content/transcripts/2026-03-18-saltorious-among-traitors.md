@@ -6,6 +6,7 @@ guest: Saltorious.eth
 guest_org: Among Traitors
 guest_links:
   - "farcaster: @saltorious.eth"
+  - "x: @saltorious1"
 host: Zaal
 date: 2026-03-18T00:00:00.000Z
 youtube_url: 'https://youtu.be/0Tevgpr5TUQ'
