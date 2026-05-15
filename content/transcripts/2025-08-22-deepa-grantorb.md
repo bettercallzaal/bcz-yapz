@@ -4,6 +4,8 @@ show: BCZ YapZ
 episode: 1
 guest: Deepa
 guest_org: GrantOrb
+guest_links:
+  - "x: @deepa"
 host: Zaal
 date: 2025-08-22T00:00:00.000Z
 youtube_url: 'https://youtu.be/3vUAFwXqdeo'

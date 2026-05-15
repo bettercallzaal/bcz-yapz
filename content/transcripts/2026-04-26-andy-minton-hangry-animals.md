@@ -5,7 +5,8 @@ episode: 18
 guest: Andy Minton
 guest_alias: Hangry Andy
 guest_org: Hangry Animals
-guest_links: []
+guest_links:
+  - "x: @hangryandy"
 host: Zaal
 date: 2026-04-26T00:00:00.000Z
 duration_min: 33
