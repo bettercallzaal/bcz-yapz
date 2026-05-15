@@ -4,6 +4,8 @@ show: BCZ YapZ
 episode: 14
 guest: Jordan
 guest_org: Ryft
+guest_links:
+  - "farcaster: @jkcharters"
 host: Zaal
 date: 2026-04-01T00:00:00.000Z
 youtube_url: 'https://youtu.be/IbhHxFR4yxE'

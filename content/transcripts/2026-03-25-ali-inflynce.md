@@ -4,6 +4,9 @@ show: BCZ YapZ
 episode: 13
 guest: Ali
 guest_org: Inflynce
+guest_links:
+  - "farcaster: @alitiknazoglu"
+  - "x: @alitiknazoglu"
 host: Zaal
 date: 2026-03-25T00:00:00.000Z
 youtube_url: 'https://youtu.be/WTyafqHKQqM'
