@@ -5,6 +5,7 @@ episode: 4
 guest: Rock Opera
 guest_links:
   - "farcaster: @rockopera.eth"
+  - "x: @mlamont"
 host: Zaal
 date: 2025-11-30T00:00:00.000Z
 youtube_url: 'https://youtu.be/43GPWLE6W5Q'
