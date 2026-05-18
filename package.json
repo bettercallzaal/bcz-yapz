@@ -12,7 +12,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "ingest:bonfire": "python3 scripts/generate-bonfire-ingest.py",
-    "rip:audio": "python3 scripts/rip-and-upload.py"
+    "rip:audio": "python3 scripts/rip-and-upload.py",
+    "new-ep": "python3 scripts/new-ep.py",
+    "resolve-guest": "python3 scripts/resolve-guest.py",
+    "draft-socials": "python3 scripts/draft-socials.py"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

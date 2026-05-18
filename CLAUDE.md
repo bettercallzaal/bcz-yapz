@@ -25,13 +25,16 @@ Deps: `gray-matter`, `zod`, `next`, `react`, `react-dom`. That's it.
 
 ## Adding an episode (the loop)
 
-1. Add transcript at `content/transcripts/YYYY-MM-DD-guest-slug.md`
-2. Validate locally: `npm run typecheck && npm run test`
-3. After publishing on YouTube, fill `youtube_url` + `youtube_video_id`
-4. Generate description via global Claude skill: `/bcz-yapz-description <slug>` - writes to `content/youtube-descriptions/<slug>.md`
-5. Rip MP3 + upload to audio host (Cloudflare R2): `npm run rip:audio -- --slug <slug>` (needs `AUDIO_HOST_*` env vars - see `scripts/PODCAST-SETUP.md`). Patches frontmatter with `audio_url`/`audio_bytes`/`audio_duration_sec`.
-6. Regenerate Bonfire ingest: `npm run ingest:bonfire`
-7. Commit + push. Vercel autodeploys to bczyapz.com and `/feed.xml` picks up the new audio for Apple/Spotify.
+1. Scaffold the file: `npm run new-ep -- --slug guest-name --guest "Guest Name" --org "Org"` - creates `content/transcripts/<today>-<slug>.md` with valid frontmatter and auto-increments the episode number.
+2. Resolve guest handles: `npm run resolve-guest -- "Guest Name"` (or `--handle`/`--x-handle` for direct lookup). Copy the printed `guest_links` YAML into the transcript file.
+3. Paste the timestamped transcript into the `## Transcript` section.
+4. Validate: `npm run typecheck && npm run test`
+5. After publishing on YouTube, fill `youtube_url` + `youtube_video_id`.
+6. Generate description via global Claude skill: `/bcz-yapz-description <slug>` - writes to `content/youtube-descriptions/<slug>.md`.
+7. Rip MP3 + upload to Cloudflare R2: `npm run rip:audio -- --slug <slug>` (needs `AUDIO_HOST_*` env vars - see `scripts/PODCAST-SETUP.md`).
+8. Generate social drafts: `npm run draft-socials -- --slug <slug>` - writes `content/socials/<slug>.md` with one-click compose URLs for Farcaster + X with the guests already @-tagged.
+9. Regenerate Bonfire ingest: `npm run ingest:bonfire`.
+10. Commit + push. Vercel autodeploys to bczyapz.com.
 
 ## Skill location
 
