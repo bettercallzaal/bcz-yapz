@@ -2,6 +2,7 @@ import { HeroSection } from './_components/HeroSection'
 import { FeaturedEpisode } from './_components/FeaturedEpisode'
 import { EpisodeList } from './_components/EpisodeList'
 import { FollowFooter } from './_components/FollowFooter'
+import { StatsBar } from './_components/StatsBar'
 import { getAllEpisodes } from '@/lib/episodes'
 import { parseChapters, type Chapter } from '@/lib/chapters'
 
@@ -19,6 +20,7 @@ export default async function BczYapzPage() {
   return (
     <main className="min-h-screen bg-[#0a1628]">
       <HeroSection />
+      <StatsBar episodes={episodes} />
       {latest ? (
         <FeaturedEpisode episode={latest} displayIndex={episodes.length} />
       ) : null}
