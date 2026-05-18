@@ -1,0 +1,73 @@
+name: Draft socials for published episodes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/transcripts/**.md'
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Specific episode slug (without .md). Leave empty to scan all.'
+        required: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Find published episodes missing social drafts
+        id: find
+        run: |
+          mkdir -p _socials_out
+          if [ -n "${{ github.event.inputs.slug }}" ]; then
+            slugs="${{ github.event.inputs.slug }}"
+          else
+            slugs=""
+            for f in content/transcripts/*.md; do
+              [ -e "$f" ] || continue
+              slug="$(basename "$f" .md)"
+              if grep -q '^youtube_url:' "$f"; then
+                slugs="$slugs $slug"
+              fi
+            done
+          fi
+          echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
+          echo "Will draft socials for:$slugs"
+
+      - name: Generate social drafts
+        run: |
+          for slug in ${{ steps.find.outputs.slugs }}; do
+            python3 scripts/draft-socials.py --slug "$slug" || echo "failed: $slug"
+          done
+          if [ -d content/socials ]; then
+            mv content/socials/*.md _socials_out/ 2>/dev/null || true
+          fi
+
+      - name: Upload drafts as artifact
+        if: hashFiles('_socials_out/*.md') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: social-drafts
+          path: _socials_out/*.md
+          retention-days: 90
+
+      - name: Summary
+        run: |
+          echo "## Social drafts" >> $GITHUB_STEP_SUMMARY
+          for f in _socials_out/*.md; do
+            [ -e "$f" ] || continue
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### $(basename "$f" .md)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            cat "$f" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          done
