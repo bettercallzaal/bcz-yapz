@@ -135,7 +135,7 @@ export default async function OpengraphImage({ params }: OgProps) {
           {date && duration ? <div>·</div> : null}
           {duration ? <div>{duration}</div> : null}
           {(date || duration) && <div>·</div>}
-          <div>hosted by Zaal</div>
+          <div>hosted by BetterCallZaal</div>
           <div style={{ marginLeft: 'auto', color: '#f5a623', fontWeight: 700 }}>
             bczyapz.com
           </div>

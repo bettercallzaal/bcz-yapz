@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BCZ_YAPZ_PAGE } from '@/lib/config'
+import { LiveEmbed } from './LiveEmbed'
 
 const SITE_URL = 'https://bczyapz.com'
 
@@ -95,7 +96,54 @@ export default function SubscribePage() {
             channel that fits your habits.
           </p>
 
-          <div className="mt-10 space-y-3">
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link
+              href="https://youtube.com/@bettercallzaal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-[#f5a623] px-5 py-3 text-sm font-bold text-[#0a1628] transition hover:brightness-110"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="currentColor"
+              >
+                <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z" />
+              </svg>
+              Subscribe on YouTube
+            </Link>
+            <Link
+              href="/feed.xml"
+              className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/40"
+            >
+              RSS feed
+            </Link>
+          </div>
+
+          <div className="mt-10">
+            <div className="mb-4 flex flex-wrap items-end justify-between gap-2">
+              <h2 className="text-xl font-bold sm:text-2xl">
+                Live on Twitch
+              </h2>
+              <Link
+                href="/live"
+                className="text-sm text-[#f5a623] hover:underline"
+              >
+                Open /live for player + chat &rarr;
+              </Link>
+            </div>
+            <p className="mb-4 text-xs text-white/55">
+              Player shows the channel&apos;s offline panel when not
+              streaming. Auto-switches to live when Zaal goes on.
+            </p>
+            <LiveEmbed />
+          </div>
+
+          <h2 className="mt-12 text-xl font-bold sm:text-2xl">
+            Every channel
+          </h2>
+          <div className="mt-4 space-y-3">
             {channels.map((c) => (
               <Link
                 key={c.label}
