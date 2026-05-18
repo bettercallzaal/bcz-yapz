@@ -1,8 +1,12 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { Analytics } from '@vercel/analytics/next'
 import { BCZ_YAPZ_PAGE } from '@/lib/config'
 import './globals.css'
+
+export const viewport: Viewport = {
+  themeColor: '#0a1628',
+}
 
 const SITE_URL = 'https://bczyapz.com'
 const OG_IMAGE = `${SITE_URL}/og-image.jpg`
@@ -33,7 +37,6 @@ export const metadata: Metadata = {
   title: BCZ_YAPZ_PAGE.title,
   description: BCZ_YAPZ_PAGE.tagline,
   manifest: '/manifest.webmanifest',
-  themeColor: '#0a1628',
   openGraph: {
     title: BCZ_YAPZ_PAGE.title,
     description: BCZ_YAPZ_PAGE.tagline,

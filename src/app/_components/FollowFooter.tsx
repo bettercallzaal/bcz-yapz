@@ -103,11 +103,21 @@ export function FollowFooter() {
       </div>
 
       <div className="mx-auto mt-12 max-w-3xl border-t border-white/5 pt-6 text-xs text-white/45">
-        BCZ YapZ - long-form interview show, hosted by Zaal. The ZAO presents.{' '}
-        <Link href="/feed.xml" className="hover:text-white">
-          RSS feed
-        </Link>
-        .
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <span>BCZ YapZ - long-form interview show, hosted by Zaal. The ZAO presents.</span>
+          <Link href="/about" className="hover:text-[#f5a623]">
+            About
+          </Link>
+          <Link href="/press" className="hover:text-[#f5a623]">
+            Press
+          </Link>
+          <Link href="/live" className="hover:text-[#f5a623]">
+            Live
+          </Link>
+          <Link href="/feed.xml" className="hover:text-[#f5a623]">
+            RSS
+          </Link>
+        </div>
       </div>
     </footer>
   )
