@@ -15,6 +15,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: ep.frontmatter.youtube_url ? 0.7 : 0.4,
   }))
 
+  const topicSet = new Set<string>()
+  for (const ep of episodes)
+    for (const t of ep.frontmatter.topics) topicSet.add(t)
+  const topicEntries: MetadataRoute.Sitemap = [...topicSet].map((slug) => ({
+    url: `${SITE_URL}/topic/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.5,
+  }))
+
   return [
     {
       url: SITE_URL,
@@ -41,11 +51,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
     {
+      url: `${SITE_URL}/guests`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/topics`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
       url: `${SITE_URL}/feed.xml`,
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.5,
     },
     ...epEntries,
+    ...topicEntries,
   ]
 }
