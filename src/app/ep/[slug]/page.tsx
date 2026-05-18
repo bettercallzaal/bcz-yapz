@@ -212,11 +212,13 @@ export default async function EpisodePage({ params }: PageProps) {
           <div className="mx-auto max-w-3xl">
             <ul className="flex flex-wrap gap-2 text-xs">
               {fm.topics.map((topic) => (
-                <li
-                  key={topic}
-                  className="rounded-full border border-white/10 px-2 py-0.5 text-white/60"
-                >
-                  {topic.replace(/-/g, ' ')}
+                <li key={topic}>
+                  <Link
+                    href={`/topic/${topic}`}
+                    className="inline-block rounded-full border border-white/10 px-2 py-0.5 text-white/60 transition hover:border-[#f5a623]/60 hover:text-[#f5a623]"
+                  >
+                    {topic.replace(/-/g, ' ')}
+                  </Link>
                 </li>
               ))}
             </ul>
