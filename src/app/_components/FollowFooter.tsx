@@ -108,6 +108,9 @@ export function FollowFooter() {
           <Link href="/about" className="hover:text-[#f5a623]">
             About
           </Link>
+          <Link href="/subscribe" className="hover:text-[#f5a623]">
+            Subscribe
+          </Link>
           <Link href="/guests" className="hover:text-[#f5a623]">
             Guests
           </Link>

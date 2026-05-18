@@ -40,6 +40,8 @@ export function HeroSection() {
           >
             {hostName}
           </Link>
+          <span className="mx-2 text-white/30">·</span>
+          New episodes Tuesdays
         </p>
         <div className="mt-7 flex flex-wrap gap-2">
           <Link
@@ -69,18 +71,10 @@ export function HeroSection() {
             YouTube
           </Link>
           <Link
-            href="/feed.xml"
+            href="/subscribe"
             className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/40"
           >
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              className="h-4 w-4"
-              fill="currentColor"
-            >
-              <path d="M3.4 4.7v3a13 13 0 0 1 13 13h3a16 16 0 0 0-16-16zm0 5.7v3a7.3 7.3 0 0 1 7.3 7.3h3a10.3 10.3 0 0 0-10.3-10.3zm2.1 6.1a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2z" />
-            </svg>
-            RSS
+            Subscribe
           </Link>
           <Link
             href={follow.farcaster.url}

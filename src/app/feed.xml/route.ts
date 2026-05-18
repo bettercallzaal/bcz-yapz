@@ -6,7 +6,7 @@ export const revalidate = 3600
 const SITE_URL = 'https://bczyapz.com'
 const OWNER_NAME = 'Zaal'
 const OWNER_EMAIL = 'zaalp99@gmail.com'
-const PODCAST_COVER = `${SITE_URL}/podcast-cover.jpg`
+const PODCAST_COVER = `${SITE_URL}/podcast-cover.png`
 
 function escapeXml(s: string): string {
   return s
