@@ -12,7 +12,18 @@ youtube_url: 'https://youtu.be/AOcp8Jpyw3k'
 youtube_title: 'BCZ Yaps – Episode 2: Rich Bartuc & the PowerPacks Diamondhands Club'
 format: video-podcast
 language: en
-topics: []
+topics:
+  - powerpacks
+  - gamestop
+  - collectibles
+  - diamond-hands
+  - meme-culture
+  - retail-investing
+  - community-building
+  - web3-culture
+  - holding-psychology
+  - psa-grading
+  - trading-cards
 entities:
   orgs: []
   people: []

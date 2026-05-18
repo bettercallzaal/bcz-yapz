@@ -10,7 +10,19 @@ youtube_url: 'https://youtu.be/9ePU4qEc67Y'
 youtube_title: 'BCZ Yaps – Episode 5: Flix.Fun with Daya'
 format: video-podcast
 language: en
-topics: []
+topics:
+  - flix-fun
+  - creator-platforms
+  - cosmos-ecosystem
+  - base-chain
+  - gasless-transactions
+  - email-onboarding
+  - live-streaming
+  - content-distribution
+  - on-chain-video
+  - creator-pages
+  - video-embeds
+  - migration-stories
 entities:
   orgs: []
   people: []

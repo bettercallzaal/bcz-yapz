@@ -13,7 +13,18 @@ youtube_url: 'https://youtu.be/4CpblYpIO8Q'
 youtube_title: BCZ YapZ – Episode 9 w/SNAX from PIZZA DAO
 format: video-podcast
 language: en
-topics: []
+topics:
+  - pizza-dao
+  - dao-coordination
+  - irl-impact
+  - bitcoin-pizza-day
+  - clubhouse-nft
+  - global-meetups
+  - crypto-culture
+  - community-organizing
+  - real-world-coordination
+  - treasury-management
+  - dao-funding
 entities:
   orgs: []
   people: []

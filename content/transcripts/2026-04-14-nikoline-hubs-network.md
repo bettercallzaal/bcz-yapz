@@ -35,6 +35,16 @@ topics:
   - plural-events
   - radical-exchange
   - web3-coordination
+  - holocracy
+  - fractal-governance
+  - polis
+  - audrey-tang
+  - in-person-web3
+  - decentralized-events
+  - commons
+  - liminal-village
+  - coordination-experiments
+  - global-villages
 keywords:
   - holocracy
   - fractal-governance

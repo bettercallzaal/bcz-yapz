@@ -21,6 +21,16 @@ topics:
   - community-resilience
   - nonprofit-ops
   - downeast-food-systems
+  - food-justice
+  - regenerative-agriculture
+  - downeast-maine
+  - community-supported-agriculture
+  - food-pantry
+  - local-economies
+  - volunteer-driven
+  - food-distribution
+  - community-events
+  - rural-coordination
 keywords:
   - community-supported-agriculture
   - food-for-health

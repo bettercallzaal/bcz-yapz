@@ -13,7 +13,17 @@ youtube_url: 'https://youtu.be/O7-1weR0Qog'
 youtube_title: 'BCZ Yaps – Episode 6: Incented with Sven'
 format: video-podcast
 language: en
-topics: []
+topics:
+  - incented
+  - on-chain-protocols
+  - daos
+  - coordination
+  - equitable-contribution
+  - decentralized-collaboration
+  - contribution-rewards
+  - incentive-design
+  - real-world-management
+  - web3-coordination
 entities:
   orgs: []
   people: []

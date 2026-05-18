@@ -13,7 +13,18 @@ youtube_url: 'https://youtu.be/0tyVpLGVxkA'
 youtube_title: 'BCZ YapZ – Episode 8: Empire Builder w/diviflyy'
 format: video-podcast
 language: en
-topics: []
+topics:
+  - empire-builder
+  - technical-writing
+  - dogecoin
+  - ico-history
+  - scroll
+  - rootstock
+  - infrastructure
+  - dev-work
+  - crypto-history
+  - l2-scaling
+  - protocol-docs
 entities:
   orgs: []
   people: []

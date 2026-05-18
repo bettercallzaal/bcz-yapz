@@ -26,6 +26,18 @@ topics:
   - bitcoin
   - startups
   - markets
+  - mit-ai-lab
+  - marvin-minsky
+  - gpt-history
+  - ai-research
+  - transcend-protocol
+  - brazil-tech
+  - math-olympiad
+  - on-chain-monetization
+  - technical-explainers
+  - creator-economy
+  - youtube-monetization
+  - pinetree-platform
 keywords:
   - mit-ai-lab
   - marvin-minsky
