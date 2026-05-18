@@ -13,7 +13,18 @@ youtube_url: 'https://youtu.be/WTyafqHKQqM'
 youtube_title: BCZ YapZ – Episode 13 w/Ali from Inflynce
 format: video-podcast
 language: en
-topics: []
+topics:
+  - inflynce
+  - farcaster-marketing
+  - web3-marketing-tools
+  - discord-contribution
+  - building-in-public
+  - founder-resilience
+  - web3-careers
+  - participation-over-credentials
+  - growth-tools
+  - tipping-mechanics
+  - creator-influence
 entities:
   orgs: []
   people: []

@@ -14,7 +14,18 @@ youtube_title: >-
   for Ownership
 format: video-podcast
 language: en
-topics: []
+topics:
+  - on-chain-art
+  - generative-art
+  - tokenized-color
+  - digital-art
+  - composability
+  - ai-creative-tools
+  - artist-provenance
+  - boston-dao
+  - on-chain-creators
+  - natively-on-chain
+  - ownership
 entities:
   orgs: []
   people: []

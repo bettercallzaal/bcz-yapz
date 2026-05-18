@@ -23,6 +23,15 @@ topics:
   - memecoins
   - boston-builders
   - defi-tooling
+  - erc20-launcher
+  - farcaster-mini-apps
+  - in-feed-experiences
+  - x402
+  - xmtp
+  - alt-clients
+  - dev-shops
+  - ai-bot-evolution
+  - wizards-of-the-coast
 keywords:
   - clanker
   - empire-builder

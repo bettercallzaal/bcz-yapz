@@ -11,7 +11,17 @@ youtube_url: 'https://youtu.be/DIeav3o8t9M'
 youtube_title: BCZ YapZ – Episode 11 w/Roaring Sensei
 format: video-podcast
 language: en
-topics: []
+topics:
+  - martial-arts-philosophy
+  - gamestop
+  - gamer-culture
+  - online-presence
+  - audience-growth
+  - streaming
+  - community-building
+  - creator-discipline
+  - powerpacks
+  - self-improvement
 entities:
   orgs: []
   people: []

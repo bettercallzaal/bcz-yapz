@@ -13,7 +13,18 @@ youtube_url: 'https://youtu.be/IbhHxFR4yxE'
 youtube_title: BCZ YapZ – Episode 14 w/Jordan from Ryft
 format: video-podcast
 language: en
-topics: []
+topics:
+  - ryft
+  - agent-driven-systems
+  - mechanism-design
+  - meme-coins
+  - nft-liquidity
+  - web3-cycles
+  - holding-behavior
+  - market-cycles
+  - nft-history
+  - discord-communities
+  - banker-terminal
 entities:
   orgs: []
   people: []

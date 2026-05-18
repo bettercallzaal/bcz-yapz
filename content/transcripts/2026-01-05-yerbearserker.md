@@ -13,7 +13,19 @@ youtube_url: 'https://youtu.be/EH-FWD7ySKk'
 youtube_title: 'BCZ YapZ – Episode 7: Empire Builder w/Yerbearserker'
 format: video-podcast
 language: en
-topics: []
+topics:
+  - empire-builder
+  - creator-tokens
+  - token-design
+  - digital-scarcity
+  - sustainable-onchain
+  - generative-infrastructure
+  - incentive-design
+  - creator-economy
+  - onchain-ecosystems
+  - creator-funding
+  - outdoor-education
+  - value-not-price
 entities:
   orgs: []
   people: []

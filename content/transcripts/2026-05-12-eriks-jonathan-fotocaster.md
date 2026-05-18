@@ -26,6 +26,18 @@ topics:
   - digital-preservation
   - photo-collecting
   - public-goods
+  - ipfs
+  - arweave
+  - photography
+  - mini-apps
+  - distribution-is-hard
+  - founder-check
+  - archive-not-marketplace
+  - base-chain
+  - edition-types
+  - open-edition
+  - i-took-a-photo
+  - dogfood-labs
 keywords:
   - fotocaster-mini-app
   - i-took-a-photo

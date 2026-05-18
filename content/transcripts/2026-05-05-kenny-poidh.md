@@ -27,6 +27,16 @@ topics:
   - permissionless-systems
   - censorship-resistance
   - cosmo-localism
+  - cypherpunk
+  - picture-or-it-didnt-happen
+  - bitcoin-magazine
+  - ico-history
+  - seo-for-crypto
+  - ethereum
+  - crypto-history
+  - meta-bounties
+  - claim-systems
+  - wallet-flows
 keywords:
   - picture-or-it-didnt-happen
   - smart-goals-bounty

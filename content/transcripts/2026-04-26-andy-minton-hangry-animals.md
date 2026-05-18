@@ -23,6 +23,19 @@ topics:
   - indie-game-dev
   - creative-agency
   - coc-community
+  - animation
+  - illustration
+  - mental-health
+  - twitch-streaming
+  - creative-direction
+  - indie-games
+  - subscription-charity
+  - hangry-animals
+  - agency-life
+  - comic-books
+  - rfi-token
+  - trademark
+  - games-for-change
 keywords:
   - hangry-animals
   - hang-studio

@@ -13,7 +13,18 @@ youtube_url: 'https://youtu.be/0Tevgpr5TUQ'
 youtube_title: BCZ YapZ – Episode 12 w/Saltorious.eth from Among Traitors
 format: video-podcast
 language: en
-topics: []
+topics:
+  - among-traitors
+  - ai-agents
+  - social-deduction-games
+  - web3-gaming
+  - embedded-wallets
+  - defi
+  - tradfi-to-crypto
+  - farcaster-builders
+  - on-chain-games
+  - agent-powered-games
+  - game-design
 entities:
   orgs: []
   people: []

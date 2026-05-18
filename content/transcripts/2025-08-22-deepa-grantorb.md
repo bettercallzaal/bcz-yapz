@@ -14,7 +14,20 @@ youtube_title: >-
   Funding
 format: video-podcast
 language: en
-topics: []
+topics:
+  - ai-tools
+  - grant-writing
+  - fundraising
+  - nonprofits
+  - social-impact
+  - polygon
+  - india-web3
+  - creator-funding
+  - automation
+  - ai-and-web3
+  - fundraising-for-creators
+  - covid-relief
+  - impact-dao
 entities:
   orgs: []
   people: []
