@@ -15,7 +15,8 @@
     "rip:audio": "python3 scripts/rip-and-upload.py",
     "new-ep": "python3 scripts/new-ep.py",
     "resolve-guest": "python3 scripts/resolve-guest.py",
-    "draft-socials": "python3 scripts/draft-socials.py"
+    "draft-socials": "python3 scripts/draft-socials.py",
+    "assemble": "python3 scripts/assemble-episode.py"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
