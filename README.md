@@ -48,7 +48,7 @@ npm run test
 1. Drop the transcript at `content/transcripts/YYYY-MM-DD-guest-slug.md`
 2. Frontmatter must validate against `EpisodeFrontmatterSchema` (see `src/lib/types.ts`)
 3. After publishing on YouTube, fill `youtube_url` and `youtube_video_id`
-4. Generate a YouTube description with the global Claude skill `/bcz-yapz-description <slug>` - it writes to `content/youtube-descriptions/`
+4. Generate a YouTube description with the repo's Claude skill `/bcz-yapz-description <slug>` (in `.claude/skills/`, run from a session inside this repo) - it writes to `content/youtube-descriptions/`
 5. Regenerate Bonfire ingest: `npm run ingest:bonfire`
 
 ## Voice
