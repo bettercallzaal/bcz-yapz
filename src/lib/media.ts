@@ -33,6 +33,11 @@ export const MEDIA_GROUPS: MediaGroup[] = [
       { label: 'X @bettercallzaal', url: 'https://x.com/bettercallzaal' },
       { label: 'YouTube @bettercallzaal', url: 'https://www.youtube.com/@bettercallzaal', note: 'BCZ YapZ episodes' },
       { label: 'Twitch bettercallzaal', url: 'https://www.twitch.tv/bettercallzaal', note: 'Livestreams' },
+      {
+        label: 'Blitzscaling Interview with Zaal Panthaki 3/28/2024 (Bayo Okusanya - NPC Labs)',
+        url: 'https://youtu.be/FKyIS-h3fNY',
+        note: 'On Zaal\'s YouTube channel, published 2025-04-14',
+      },
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/zaalp/' },
       { label: 'GitHub', url: 'https://github.com/bettercallzaal' },
       { label: 'Portfolio', url: 'https://bettercallzaal.com/portfolio/' },
@@ -91,8 +96,10 @@ export const MEDIA_GROUPS: MediaGroup[] = [
   },
 ]
 
-// Zaal as the guest or the subject. `title` is the video's own title and
-// `show` is the channel it is published on, both read from YouTube.
+// Zaal as the guest on someone else's channel. `title` is the video's own
+// title, `show` is the channel it is published on and `date` is YouTube's
+// publish date, all read from YouTube. A video on Zaal's own channel does
+// not belong here; it goes in the 'zaal' group above.
 export const APPEARANCES: Appearance[] = [
   {
     date: '2025-04-11',
@@ -111,11 +118,5 @@ export const APPEARANCES: Appearance[] = [
     show: 'NovaCrypto LTD',
     title: 'ZAO Fractal: Musicians, artists, technologists united to unlock Web3',
     url: 'https://www.youtube.com/watch?v=0_WvwzBvs90',
-  },
-  {
-    date: '2024-03-28',
-    show: 'Zaal on YouTube',
-    title: 'Blitzscaling Interview with Zaal Panthaki 3/28/2024 (Bayo Okusanya - NPC Labs)',
-    url: 'https://youtu.be/FKyIS-h3fNY',
   },
 ]
