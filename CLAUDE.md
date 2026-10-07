@@ -30,7 +30,7 @@ Deps: `gray-matter`, `zod`, `next`, `react`, `react-dom`. That's it.
 3. Paste the timestamped transcript into the `## Transcript` section.
 4. Validate: `npm run typecheck && npm run test`
 5. After publishing on YouTube, fill `youtube_url` + `youtube_video_id`.
-6. Generate description via global Claude skill: `/bcz-yapz-description <slug>` - writes to `content/youtube-descriptions/<slug>.md`.
+6. Generate description via the repo's Claude skill: `/bcz-yapz-description <slug>` - writes to `content/youtube-descriptions/<slug>.md`.
 7. Rip MP3 + upload to Cloudflare R2: `npm run rip:audio -- --slug <slug>` (needs `AUDIO_HOST_*` env vars - see `scripts/PODCAST-SETUP.md`).
 8. Generate social drafts: `npm run draft-socials -- --slug <slug>` - writes `content/socials/<slug>.md` with one-click compose URLs for Farcaster + X with the guests already @-tagged.
 9. Regenerate Bonfire ingest: `npm run ingest:bonfire`.
@@ -38,7 +38,7 @@ Deps: `gray-matter`, `zod`, `next`, `react`, `react-dom`. That's it.
 
 ## Skill location
 
-The `bcz-yapz-description` skill lives globally at `~/.claude/skills/bcz-yapz-description/SKILL.md`. It's pinned to this repo (`/Users/zaalpanthaki/Documents/bcz-yapz/`) but callable from any session. If you change content paths, update the skill too.
+The `bcz-yapz-description` skill lives in this repo at `.claude/skills/bcz-yapz-description/SKILL.md`. It loads in any Claude Code session started inside a clone of this repo and uses repo-relative paths only. If you change content paths, update the skill too.
 
 ## Per-file commands
 

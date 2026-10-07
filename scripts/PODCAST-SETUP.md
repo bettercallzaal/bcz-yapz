@@ -70,7 +70,7 @@ echo $AUDIO_HOST_BUCKET   # should print bcz-yapz-audio
 ## 4. Install Python deps
 
 ```bash
-cd /Users/zaalpanthaki/Documents/bcz-yapz
+cd "$(git rev-parse --show-toplevel)"   # run from anywhere inside your clone
 pip3 install -r scripts/requirements.txt
 ```
 
