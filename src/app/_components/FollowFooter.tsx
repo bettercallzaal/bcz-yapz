@@ -117,6 +117,9 @@ export function FollowFooter() {
           <Link href="/topics" className="hover:text-[#f5a623]">
             Topics
           </Link>
+          <Link href="/media" className="hover:text-[#f5a623]">
+            Media
+          </Link>
           <Link href="/press" className="hover:text-[#f5a623]">
             Press
           </Link>
