@@ -73,6 +73,24 @@ export const MEDIA_GROUPS: MediaGroup[] = [
     ],
   },
   {
+    // Set start times come from the 2026-10-04 footage catalogue (frames
+    // sampled from the VODs, about plus or minus 2 minutes), and the act
+    // order was confirmed by Zaal on 2026-10-04. The VODs themselves were
+    // re-read 2026-10-08 (title, length, date).
+    id: 'zaostock-2026',
+    title: 'ZAOstock 2026 replays, set by set',
+    links: [
+      { label: 'The Crown Vics', url: 'https://www.twitch.tv/videos/2890837517?t=0h2m30s', note: 'Opening set, continues in streams 2 to 4' },
+      { label: 'OPEN X', url: 'https://www.twitch.tv/videos/2890857550?t=0h23m0s' },
+      { label: 'Grass Rug', url: 'https://www.twitch.tv/videos/2890857550?t=1h23m0s' },
+      { label: 'Michael Anderson', url: 'https://www.twitch.tv/videos/2890969100?t=0h13m0s' },
+      { label: 'DCoop', url: 'https://www.twitch.tv/videos/2891031137?t=0h1m0s' },
+      { label: 'LyonsDen (Rez Muzik)', url: 'https://www.twitch.tv/videos/2891031137?t=0h50m30s' },
+      { label: 'Tom Fellenz', url: 'https://www.twitch.tv/videos/2891031137?t=1h49m0s' },
+      { label: 'Closing words', url: 'https://www.twitch.tv/videos/2891031137?t=2h26m30s', note: 'Zaal on stage' },
+    ],
+  },
+  {
     id: 'wavewarz',
     title: 'WaveWarZ',
     links: [
