@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllEpisodes } from '@/lib/episodes'
+import { getAllUpcoming } from '@/lib/upcoming'
 
 const SITE_URL = 'https://bczyapz.com'
 
@@ -25,7 +26,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }))
 
+  const upcomingEntries: MetadataRoute.Sitemap = getAllUpcoming().map((u) => ({
+    url: `${SITE_URL}/${u.episode}`,
+    lastModified: new Date(),
+    changeFrequency: 'hourly',
+    priority: 0.8,
+  }))
+
   return [
+    ...upcomingEntries,
     {
       url: SITE_URL,
       lastModified: new Date(),
