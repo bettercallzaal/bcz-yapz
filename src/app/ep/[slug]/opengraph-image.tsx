@@ -6,6 +6,14 @@ export const alt = 'BCZ YapZ episode'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
+// Prerender one card per episode at build time, same list as the page's own
+// generateStaticParams. Without this the card rendered per request (ƒ in the
+// build table), and image rendering is CPU on the Vercel Hobby cap.
+export async function generateStaticParams() {
+  const episodes = await getAllEpisodes()
+  return episodes.map((ep) => ({ slug: ep.slug }))
+}
+
 interface OgProps {
   params: Promise<{ slug: string }>
 }
@@ -84,7 +92,8 @@ export default async function OpengraphImage({ params }: OgProps) {
                 letterSpacing: 2,
               }}
             >
-              EP {epNum}
+              {/* One text node: `EP {epNum}` is two children, which satori rejects in a non-flex div. */}
+              {`EP ${epNum}`}
             </div>
           ) : null}
         </div>
