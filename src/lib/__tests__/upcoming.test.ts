@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { parseUpcoming, upcomingState, getAllUpcoming } from '../upcoming'
+import { parseUpcoming, upcomingState, currentUpcoming, getAllUpcoming } from '../upcoming'
 
 const VALID = `---
 episode: 25
@@ -29,6 +29,20 @@ describe('upcoming', () => {
     expect(upcomingState(start, 90, t)).toBe('live')
     expect(upcomingState(start, 90, t + 89 * 60_000)).toBe('live')
     expect(upcomingState(start, 90, t + 90 * 60_000)).toBe('ended')
+  })
+
+  it('picks the earliest episode that has not ended, not the lowest number', () => {
+    const aired = { episode: 25, starts_at: '2026-10-15T22:00:00Z', duration_min: 90 }
+    const next = { episode: 22, starts_at: '2026-10-30T21:00:00Z', duration_min: 90 }
+    const later = { episode: 23, starts_at: '2026-11-06T21:00:00Z', duration_min: 90 }
+    const list = [next, later, aired]
+    const t = Date.parse(next.starts_at)
+
+    expect(currentUpcoming(list, Date.parse(aired.starts_at))).toBe(aired)
+    expect(currentUpcoming(list, t - 1)).toBe(next)
+    expect(currentUpcoming(list, t + 89 * 60_000)).toBe(next)
+    expect(currentUpcoming(list, t + 90 * 60_000)).toBe(later)
+    expect(currentUpcoming(list, Date.parse(later.starts_at) + 90 * 60_000)).toBeNull()
   })
 
   it('every file in content/upcoming validates', () => {

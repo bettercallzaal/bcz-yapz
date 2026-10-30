@@ -27,7 +27,7 @@ export const UpcomingSchema = z.object({
 
 export type Upcoming = z.infer<typeof UpcomingSchema> & { slug: string }
 
-export { upcomingState, type UpcomingState } from './upcoming-state'
+export { upcomingState, currentUpcoming, type UpcomingState } from './upcoming-state'
 
 export function parseUpcoming(slug: string, raw: string): Upcoming | null {
   const parsed = matter(raw)
