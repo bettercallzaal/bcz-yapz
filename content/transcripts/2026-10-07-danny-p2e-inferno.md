@@ -11,6 +11,8 @@ duration_min: 43
 format: video-podcast
 language: en
 status: raw
+youtube_url: https://www.youtube.com/watch?v=IWeb6HPockk
+youtube_video_id: IWeb6HPockk
 topics:
   - p2e-inferno
   - unlock-protocol
