@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { currentUpcoming, getAllUpcoming } from '@/lib/upcoming'
+import { LiveGuest } from './LiveGuest'
 import { LiveStage } from './LiveStage'
 
 const SITE_URL = 'https://bczyapz.com'
@@ -24,6 +26,8 @@ export const metadata: Metadata = {
 }
 
 export default function LivePage() {
+  const upcoming = getAllUpcoming()
+
   return (
     <main className="min-h-screen bg-[#0a1628] text-white">
       <header className="border-b border-white/10 bg-[#0a1628] px-4 py-6 sm:px-6 lg:px-8">
@@ -75,6 +79,8 @@ export default function LivePage() {
               </a>
             </div>
           </div>
+
+          <LiveGuest upcoming={upcoming} initial={currentUpcoming(upcoming, Date.now())} />
 
           <LiveStage />
         </div>
