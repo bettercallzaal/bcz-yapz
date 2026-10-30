@@ -5,7 +5,7 @@ guest: Gigi
 guest_org: Lit Studio
 guest_links:
   - https://x.com/gigi_gw_
-starts_at: 2026-10-30T21:00:00Z
+starts_at: 2026-10-30T22:00:00Z
 duration_min: 90
 watch_url: https://twitch.tv/bettercallzaal
 thumbnail: /upcoming/22-gigi.jpg
