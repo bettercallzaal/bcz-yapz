@@ -1,6 +1,6 @@
 ---
 episode: 22
-title: Gigi, aka GDubberz, of Lit Studio
+title: Gigi, aka GDUBBYZ, of Lit Studio
 guest: Gigi
 guest_org: Lit Studio
 guest_links:
@@ -12,5 +12,5 @@ thumbnail: /upcoming/22-gigi.jpg
 topics:
   - Lit Studio
   - Stilo World
-summary: Gigi, aka GDubberz, of Lit Studio joins Zaal live on BCZ YapZ. She works with Stilo World.
+summary: Gigi, aka GDUBBYZ, of Lit Studio joins Zaal live on BCZ YapZ. She works with Stilo World.
 ---
