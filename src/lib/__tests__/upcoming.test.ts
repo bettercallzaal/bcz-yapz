@@ -18,6 +18,12 @@ describe('upcoming', () => {
     expect(u?.starts_at).toBe('2026-10-15T22:00:00.000Z')
   })
 
+  it('reads a replay id, and leaves it unset before one exists', () => {
+    expect(parseUpcoming('25-someone', VALID)?.youtube_video_id).toBeUndefined()
+    const aired = VALID.replace('---\nepisode', '---\nyoutube_video_id: abc123\nepisode')
+    expect(parseUpcoming('25-someone', aired)?.youtube_video_id).toBe('abc123')
+  })
+
   it('rejects frontmatter without a watch url', () => {
     expect(parseUpcoming('x', VALID.replace(/watch_url.*\n/, ''))).toBeNull()
   })

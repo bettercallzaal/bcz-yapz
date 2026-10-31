@@ -11,6 +11,7 @@ const SITE_URL = 'https://bczyapz.com'
 
 // bczyapz.com/<episode number>. A number with a published page goes to it;
 // an upcoming one gets this page: thumbnail, guest, time and the live stream.
+// Once it has aired and has a YouTube id, the replay replaces the time and stream.
 export const dynamicParams = false
 export const revalidate = 3600
 
@@ -75,6 +76,8 @@ export default async function EpisodeNumberPage({ params }: PageProps) {
   const u = findUpcoming(num)
   if (!u) notFound()
 
+  const youtubeId = u.youtube_video_id
+
   return (
     <main className="min-h-screen bg-[#0a1628] text-white">
       <header className="border-b border-white/10 bg-[#0a1628] px-4 py-6 sm:px-6 lg:px-8">
@@ -90,7 +93,17 @@ export default async function EpisodeNumberPage({ params }: PageProps) {
 
       <section className="px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          {u.thumbnail ? (
+          {youtubeId ? (
+            <div className="aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${youtubeId}`}
+                title={`BCZ YapZ episode ${u.episode} with ${u.guest}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="h-full w-full"
+              />
+            </div>
+          ) : u.thumbnail ? (
             <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black">
               <Image
                 src={u.thumbnail}
@@ -103,7 +116,13 @@ export default async function EpisodeNumberPage({ params }: PageProps) {
             </div>
           ) : null}
 
-          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_300px]">
+          <div
+            className={
+              youtubeId
+                ? 'mt-6'
+                : 'mt-6 grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_300px]'
+            }
+          >
             <div>
               <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{u.title}</h1>
               <p className="mt-2 text-base text-white/75">
@@ -127,12 +146,12 @@ export default async function EpisodeNumberPage({ params }: PageProps) {
               ) : null}
               <div className="mt-6 flex flex-wrap gap-3 text-sm">
                 <a
-                  href={u.watch_url}
+                  href={youtubeId ? `https://www.youtube.com/watch?v=${youtubeId}` : u.watch_url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-md bg-[#f5a623] px-4 py-2 font-semibold text-[#0a1628] transition hover:opacity-90"
                 >
-                  Watch live
+                  {youtubeId ? 'Watch on YouTube' : 'Watch live'}
                 </a>
                 {u.guest_links.map((href) => (
                   <a
@@ -147,17 +166,19 @@ export default async function EpisodeNumberPage({ params }: PageProps) {
                 ))}
               </div>
             </div>
-            <StartTime startsAt={u.starts_at} durationMin={u.duration_min} />
+            {youtubeId ? null : <StartTime startsAt={u.starts_at} durationMin={u.duration_min} />}
           </div>
         </div>
       </section>
 
-      <section className="px-4 pb-10 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mb-4 text-lg font-semibold text-white">The stream</h2>
-          <LiveStage />
-        </div>
-      </section>
+      {youtubeId ? null : (
+        <section className="px-4 pb-10 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="mb-4 text-lg font-semibold text-white">The stream</h2>
+            <LiveStage />
+          </div>
+        </section>
+      )}
 
       <section className="border-t border-white/10 px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
