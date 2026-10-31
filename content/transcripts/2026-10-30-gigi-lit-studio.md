@@ -29,7 +29,7 @@ entities:
     - Stilo World
     - Cyberfy
     - WaveWarZ
-summary: "Gigi, aka GDUBBYZ, tells how going back to concerts led her to X spaces and to Stilo World's music. She helps Stilo with Lit Studio, where artists add songs and people stream them, and with Cyberfy, a site for web3 events. Then she and Zaal talk WaveWarZ."
+summary: "Gigi tells how going back to concerts led her to X spaces and to Stilo World's music. She helps Stilo with Lit Studio, where artists add songs and people stream them, and with Cyberfy, a site for web3 events. Then she and Zaal talk WaveWarZ."
 youtube_url: https://www.youtube.com/watch?v=YdR6G8uex00
 youtube_video_id: YdR6G8uex00
 ---
@@ -66,9 +66,9 @@ youtube_video_id: YdR6G8uex00
 
 [00:01:29] with um COVID, everything kind of became remote. Um and I had another um um
 
-[00:01:37] remote job as well, thankfully. And then um my 20s um was a little difficult. I had
+[00:01:37] remote job as well, thankfully.
 
-[00:01:46] some like digestive issues and stuff that I had to deal with. Um, and then
+[00:01:46] [passage removed]
 
 [00:01:51] when I turned 29 last year in 2025, um, I was like, wait, like since like
 
@@ -88,7 +88,7 @@ youtube_video_id: YdR6G8uex00
 
 [00:02:36] fun, um I mean work, family, volunteer, and all of that. And then um my last
 
-[00:02:42] year of my 20s, I was like, "Okay, like my health is good right now." But I this
+[00:02:42] [passage removed]
 
 [00:02:47] year like I'm gonna make it a point to have fun. Like no matter what, no matter
 
@@ -100,7 +100,7 @@ youtube_video_id: YdR6G8uex00
 
 [00:03:07] like dwindled. I haven't like danced or like really listen to music that much
 
-[00:03:11] because it was with my health and like work and stuff. It was just I just I I
+[00:03:11] [passage removed]
 
 [00:03:16] just didn't feel as connected as I used to like I used to dance every day for
 
