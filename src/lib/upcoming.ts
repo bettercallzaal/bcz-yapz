@@ -19,6 +19,7 @@ export const UpcomingSchema = z.object({
   starts_at: z.preprocess(toIso, z.string().datetime()),
   duration_min: z.number().int().positive().optional().default(90),
   watch_url: z.string().url(),
+  youtube_video_id: z.string().optional(),
   thumbnail: z.string().optional(),
   announce_urls: z.array(z.string().url()).optional().default([]),
   topics: z.array(z.string()).optional().default([]),
