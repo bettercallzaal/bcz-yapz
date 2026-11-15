@@ -43,7 +43,7 @@ thumbnail_override: /thumbnails/2026-11-14-retrospect.jpg
 
 [00:00:16] battle tomorrow, and uh it's a blast to have you on. We've interacted a lot of
 
-[00:00:21] times on Xpaces through the COC, but it's an absolute pleasure to have you here
+[00:00:21] times on X spaces through the COC, but it's an absolute pleasure to have you here
 
 [00:00:26] today. Hey, do you want to share a little bit about yourself, who you are and what you do? >> Yeah,
 
@@ -201,7 +201,7 @@ thumbnail_override: /thumbnails/2026-11-14-retrospect.jpg
 
 [00:07:15] then you know like came college etc. So I I left it but in the meantime there
 
-[00:07:20] was like a console PlayStation before it it was amigga with all those cool
+[00:07:20] was like a console PlayStation before it it was Amiga with all those cool
 
 [00:07:25] programs to make music like u on PlayStation. I remember cuz it is cool till
 
@@ -379,7 +379,7 @@ thumbnail_override: /thumbnails/2026-11-14-retrospect.jpg
 
 [00:15:16] my my road Atari 2006 uh the one I said 20 2600
 
-[00:15:22] oh it would be easy to say and then you know like Commodore 64 Amigga
+[00:15:22] oh it would be easy to say and then you know like Commodore 64 Amiga
 
 [00:15:27] 500 you know play Sega, Nintendo, Super Nintendo, Game
 
@@ -589,7 +589,7 @@ thumbnail_override: /thumbnails/2026-11-14-retrospect.jpg
 
 [00:24:37] with people like everyone of uh the the um
 
-[00:24:42] owner of the NFD and just vibe some kind of like
+[00:24:42] owner of the NFT and just vibe some kind of like
 
 [00:24:48] this or writing I or um
 
