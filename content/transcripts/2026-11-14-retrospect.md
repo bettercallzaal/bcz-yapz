@@ -30,6 +30,7 @@ entities:
 summary: "Retrospect talks about growing up in Poland with retro consoles, DJing hip-hop parties with his cousin, getting into crypto and music NFTs, and how he found WaveWarZ. Recorded the day before his WaveWarZ battle with S.R. Chappell on 15 November 2026."
 youtube_url: https://www.youtube.com/watch?v=06u0eKEZOgY
 youtube_video_id: 06u0eKEZOgY
+thumbnail_override: /thumbnails/2026-11-14-retrospect.jpg
 ---
 
 ## Transcript
@@ -248,7 +249,7 @@ youtube_video_id: 06u0eKEZOgY
 
 [00:09:21] you know like since uh only you know like lately when the WaveWarZ came you know like more
 
-[00:09:26] wave station and everything you know is like spinning around faster and faster
+[00:09:26] WaveZStation and everything you know is like spinning around faster and faster
 
 [00:09:32] so you see where we are but who sent me so uh Graham
 
@@ -288,9 +289,9 @@ youtube_video_id: 06u0eKEZOgY
 
 [00:11:08] That's cool. >> No, we we love it. We love having you there. Um
 
-[00:11:13] WaveWarZ also you're me you mentioned WaveZStation. Do you want to share a little bit about a couple of your Wave
+[00:11:13] WaveWarZ also you're me you mentioned WaveZStation. Do you want to share a little bit about a couple of your WaveZStation
 
-[00:11:19] Station drops that you've done so far? Yeah, so far I did
+[00:11:19] drops that you've done so far? Yeah, so far I did
 
 [00:11:24] one drop there cuz cuz it's many, you know, like things around that I want to
 
@@ -310,7 +311,7 @@ youtube_video_id: 06u0eKEZOgY
 
 [00:12:09] >> Yeah. Yeah. >> What song? >> What song? >> The song.
 
-[00:12:15] No, wave station. >> Ah, wave station. Yeah. So, yeah, it's
+[00:12:15] No, WaveZStation. >> Ah, WaveZStation. Yeah. So, yeah, it's
 
 [00:12:20] the Duchess. The Duchess, of course, one of the song for Duchess.
 

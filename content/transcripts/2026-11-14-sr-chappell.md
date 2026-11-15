@@ -28,6 +28,7 @@ entities:
 summary: "S.R. Chappell talks about her songwriting and poetry, how NFT art and AI music tools led her to making songs, and how she found WaveWarZ through X spaces. Recorded the day before her WaveWarZ battle with Retrospect on 15 November 2026."
 youtube_url: https://www.youtube.com/watch?v=qC-5H_Pulhc
 youtube_video_id: qC-5H_Pulhc
+thumbnail_override: /thumbnails/2026-11-14-sr-chappell.jpg
 ---
 
 ## Transcript
@@ -38,7 +39,7 @@ youtube_video_id: qC-5H_Pulhc
 
 [00:00:10] just go with my catalog songs and I woke
 
-[00:00:15] up today to respect with or retrospect
+[00:00:15] up today Retrospect with or Retrospect
 
 [00:00:20] uh had tagged me in a song with like my name in it. I was like, "Oh no, I
 
@@ -76,9 +77,9 @@ youtube_video_id: qC-5H_Pulhc
 
 [00:01:50] S.R. Chappell. And I'm like, "Okay, I I I'm excited to to sit down with you, dive into
 
-[00:01:55] more into who is S.R. Chappell and and uh and you know, how you came to our Wave
+[00:01:55] more into who is S.R. Chappell and and uh and you know, how you came to our WaveWarZ
 
-[00:02:00] Warriors community." So, do you want to give us a little bit of a background on on who is S.R. Chappell?
+[00:02:00] community." So, do you want to give us a little bit of a background on on who is S.R. Chappell?
 
 [00:02:06] Wow, that's an extensive um question. I'm a little eclectic and I just
 
@@ -166,27 +167,27 @@ youtube_video_id: qC-5H_Pulhc
 
 [00:05:46] that dynamic. So really dived into poetry and then
 
-[00:05:53] I want to say around 2019 I learned about NFTTS
+[00:05:53] I want to say around 2019 I learned about NFTs
 
 [00:06:00] and I had been doing these little picture
 
 [00:06:05] slides that went along with my poetry on Instagram and
 
-[00:06:11] it made me think I heard about people and the big
+[00:06:11] it made me think I heard about Beeple and the big
 
-[00:06:16] people uh Christy's auction where he sold
+[00:06:16] Beeple uh Christie's auction where he sold
 
 [00:06:21] his piece, his collage piece for like $60 million or something
 
 [00:06:26] like that. And I was like intrigued, totally intrigued.
 
-[00:06:31] So I was like, I got to figure out this NFT stuff. So I dived into NFTTS
+[00:06:31] So I was like, I got to figure out this NFT stuff. So I dived into NFTs
 
 [00:06:36] and started making art and kind of all my art usually comes
 
 [00:06:41] with like a poem, so it's kind of attached as well. the po poetry and the
 
-[00:06:46] art. Um, so I I was making NFTTS with poetry
+[00:06:46] art. Um, so I I was making NFTs with poetry
 
 [00:06:52] attached and uh for a few years and then you
 
@@ -292,7 +293,7 @@ youtube_video_id: qC-5H_Pulhc
 
 [00:11:24] the space and normally I just kind of pop in spaces and don't really, but man,
 
-[00:11:29] wave warp space is so much fun and it's addictive.
+[00:11:29] WaveWarZ space is so much fun and it's addictive.
 
 [00:11:34] It's so addictive and uh just the little banter and like
 
@@ -458,9 +459,9 @@ youtube_video_id: qC-5H_Pulhc
 
 [00:19:57] I think uh we can all uh we can all feel that sentiment, right? Um that's
 
-[00:20:02] a that's a good common sentiment. I think that's that's the goal. Um I think uh us as a Wave
+[00:20:02] a that's a good common sentiment. I think that's that's the goal. Um I think uh us as a WaveWarZ
 
-[00:20:07] Wars family, like you mentioned earlier, um the goal is to kind of uplift each other, make
+[00:20:07] family, like you mentioned earlier, um the goal is to kind of uplift each other, make
 
 [00:20:12] each other um the best versions of ourselves, and you know, I think Hurricane um is
 
@@ -518,7 +519,7 @@ youtube_video_id: qC-5H_Pulhc
 
 [00:22:37] where where are you at with your with your mental mind of uh of
 
-[00:22:42] going up against retrospect? >> Oh, uh well,
+[00:22:42] going up against Retrospect? >> Oh, uh well,
 
 [00:22:47] you know, something I thought of before I go into that is also something I would like for
 
@@ -532,7 +533,7 @@ youtube_video_id: qC-5H_Pulhc
 
 [00:23:13] I want to do. Um >> you know, I'm I've got a pretty good mindset.
 
-[00:23:18] I feel like this uh this probably couldn't be a better match. Me in retrospect,
+[00:23:18] I feel like this uh this probably couldn't be a better match. Me and Retrospect,
 
 [00:23:24] I I wasn't really familiar. I mean, of course, I've heard him in the space, but
 
@@ -552,7 +553,7 @@ youtube_video_id: qC-5H_Pulhc
 
 [00:24:05] level that Stormy hits, you know, with rock cuz I'm more vintage rock. Um,
 
-[00:24:11] so yeah, but I think me in retrospect, this is going to be a really good battle. We're It's
+[00:24:11] so yeah, but I think me and Retrospect, this is going to be a really good battle. We're It's
 
 [00:24:17] very fair. We both I have a lot of, you know, he has that
 
