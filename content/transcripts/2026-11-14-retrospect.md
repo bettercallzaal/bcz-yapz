@@ -27,7 +27,7 @@ entities:
   projects:
     - WaveWarZ
     - WaveZStation
-summary: "Retrospect talks about growing up in Poland with retro consoles, DJing hip-hop parties with his cousin, getting into crypto and music NFTs, and how he found WaveWarZ. Recorded the day before his WaveWarZ battle with S.R. Chappell on 15 November 2026."
+summary: "Retrospect talks about retro gaming, music production, AI music tools, WaveZStation releases, and the WaveWarZ community. Recorded the day before his WaveWarZ battle with S.R. Chappell on 15 November 2026."
 youtube_url: https://www.youtube.com/watch?v=06u0eKEZOgY
 youtube_video_id: 06u0eKEZOgY
 thumbnail_override: /thumbnails/2026-11-14-retrospect.jpg
