@@ -367,7 +367,7 @@ thumbnail_override: /thumbnails/2026-11-14-sr-chappell.jpg
 
 [00:14:42] screen again. Oh, I'd love to to see some more of uh you know the all
 
-[00:14:47] the different parts of A S.R. Chappell. >> Oh, yeah. Oh, I have to do that again. Let's
+[00:14:47] the different parts of S.R. Chappell. >> Oh, yeah. Oh, I have to do that again. Let's
 
 [00:14:52] see. Let's see if I can figure that out. Uh screen
 
@@ -605,7 +605,7 @@ thumbnail_override: /thumbnails/2026-11-14-sr-chappell.jpg
 
 [00:26:23] decide of six songs. I think I'm gonna come with nine and
 
-[00:26:28] so I'll have plenty of audles if I want them. But, um, yeah, that's the fun
+[00:26:28] so I'll have plenty of audibles if I want them. But, um, yeah, that's the fun
 
 [00:26:33] part, having audibles, right? Just be whoop audible. [laughter] >> Exactly. Exactly.
 
