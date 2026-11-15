@@ -2,7 +2,8 @@
 title: BCZ YapZ w/S.R. Chappell
 show: BCZ YapZ
 guest: S.R. Chappell
-guest_links: []
+guest_links:
+  - "audius: https://audius.co/srchappell"
 host: Zaal
 date: 2026-11-14T00:00:00.000Z
 duration_min: 30

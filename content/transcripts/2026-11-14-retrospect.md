@@ -2,7 +2,8 @@
 title: BCZ YapZ w/Retrospect
 show: BCZ YapZ
 guest: Retrospect
-guest_links: []
+guest_links:
+  - "audius: https://audius.co/Retrospect"
 host: Zaal
 date: 2026-11-14T00:00:00.000Z
 duration_min: 30
