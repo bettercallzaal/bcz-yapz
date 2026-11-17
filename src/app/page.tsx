@@ -22,7 +22,7 @@ export default async function BczYapzPage() {
       <HeroSection />
       <StatsBar episodes={episodes} />
       {latest ? (
-        <FeaturedEpisode episode={latest} displayIndex={episodes.length} />
+        <FeaturedEpisode episode={latest} />
       ) : null}
       <EpisodeList episodes={rest} chaptersBySlug={chaptersBySlug} />
       <FollowFooter />

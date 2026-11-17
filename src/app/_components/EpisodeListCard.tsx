@@ -7,17 +7,15 @@ import type { Chapter } from '@/lib/chapters'
 
 interface EpisodeListCardProps {
   episode: Episode
-  displayIndex: number
   chapters: Chapter[] | null
 }
 
 export function EpisodeListCard({
   episode,
-  displayIndex,
   chapters,
 }: EpisodeListCardProps) {
   const { frontmatter, hasYoutube, thumbnailUrl } = episode
-  const epNumber = frontmatter.episode ?? displayIndex
+  const epNumber = frontmatter.episode
   const topics = frontmatter.topics.slice(0, 3)
 
   return (
@@ -31,7 +29,7 @@ export function EpisodeListCard({
               <>
                 <Image
                   src={thumbnailUrl}
-                  alt={`${frontmatter.guest} - BCZ YapZ episode ${epNumber}`}
+                  alt={`${frontmatter.guest} - BCZ YapZ${epNumber ? ` episode ${epNumber}` : ''}`}
                   fill
                   sizes="(max-width: 640px) 100vw, 320px"
                   className="object-cover transition group-hover:scale-105"
@@ -55,9 +53,11 @@ export function EpisodeListCard({
                 {hasYoutube ? 'No thumbnail' : 'Recorded - not yet posted'}
               </div>
             )}
-            <div className="absolute left-3 top-3 rounded bg-black/70 px-2 py-1 text-[11px] font-bold text-white backdrop-blur">
-              EP {epNumber}
-            </div>
+            {epNumber ? (
+              <div className="absolute left-3 top-3 rounded bg-black/70 px-2 py-1 text-[11px] font-bold text-white backdrop-blur">
+                EP {epNumber}
+              </div>
+            ) : null}
           </div>
           <div className="flex flex-col p-5 sm:p-6">
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/55">

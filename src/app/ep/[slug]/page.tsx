@@ -67,7 +67,7 @@ export default async function EpisodePage({ params }: PageProps) {
   if (!ep) notFound()
 
   const fm = ep.frontmatter
-  const epNum = fm.episode ?? episodes.findIndex((e) => e.slug === slug) + 1
+  const epNum = fm.episode
   const chapters = await parseChapters(slug)
   const transcript = parseTranscript(slug)
   const related = relatedEpisodes(ep, episodes, 3)
@@ -120,8 +120,8 @@ export default async function EpisodePage({ params }: PageProps) {
             &larr; All episodes
           </Link>
           <p className="mt-3 text-xs text-white/60">
-            <span className="font-semibold text-[#f5a623]">Ep {epNum}</span>
-            {ep.displayDate ? <> · {ep.displayDate}</> : null}
+            {epNum ? <span className="font-semibold text-[#f5a623]">Ep {epNum}</span> : null}
+            {ep.displayDate ? <>{epNum ? ' · ' : ''}{ep.displayDate}</> : null}
             {fm.duration_min ? <> · {fm.duration_min} min</> : null}
           </p>
           <h1 className="mt-2 text-2xl font-bold sm:text-3xl">
@@ -150,7 +150,7 @@ export default async function EpisodePage({ params }: PageProps) {
             <iframe
               id="bcz-yt-player"
               src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1`}
-              title={`BCZ YapZ ep ${epNum} with ${fm.guest}`}
+              title={`BCZ YapZ${epNum ? ` ep ${epNum}` : ''} with ${fm.guest}`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               loading="lazy"

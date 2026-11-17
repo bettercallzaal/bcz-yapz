@@ -4,12 +4,11 @@ import type { Episode } from '@/lib/types'
 
 interface FeaturedEpisodeProps {
   episode: Episode
-  displayIndex: number
 }
 
-export function FeaturedEpisode({ episode, displayIndex }: FeaturedEpisodeProps) {
+export function FeaturedEpisode({ episode }: FeaturedEpisodeProps) {
   const { frontmatter, hasYoutube, thumbnailUrl } = episode
-  const epNum = frontmatter.episode ?? displayIndex
+  const epNum = frontmatter.episode
   const topics = frontmatter.topics.slice(0, 4)
 
   return (
@@ -28,7 +27,7 @@ export function FeaturedEpisode({ episode, displayIndex }: FeaturedEpisodeProps)
                 <>
                   <Image
                     src={thumbnailUrl}
-                    alt={`${frontmatter.guest} - BCZ YapZ episode ${epNum}`}
+                    alt={`${frontmatter.guest} - BCZ YapZ${epNum ? ` episode ${epNum}` : ''}`}
                     fill
                     priority
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -53,9 +52,11 @@ export function FeaturedEpisode({ episode, displayIndex }: FeaturedEpisodeProps)
                   Recorded - not yet posted
                 </div>
               )}
-              <div className="absolute left-4 top-4 rounded-md bg-black/70 px-3 py-1.5 text-xs font-bold text-white backdrop-blur">
-                EP {epNum}
-              </div>
+              {epNum ? (
+                <div className="absolute left-4 top-4 rounded-md bg-black/70 px-3 py-1.5 text-xs font-bold text-white backdrop-blur">
+                  EP {epNum}
+                </div>
+              ) : null}
             </div>
             <div className="flex flex-col justify-center p-6 sm:p-8">
               <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/55">
