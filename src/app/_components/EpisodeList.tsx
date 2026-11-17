@@ -76,10 +76,6 @@ export function EpisodeList({ episodes, chaptersBySlug }: EpisodeListProps) {
               <li key={episode.slug} className="group">
                 <EpisodeListCard
                   episode={episode}
-                  displayIndex={
-                    episodes.length -
-                    episodes.findIndex((e) => e.slug === episode.slug)
-                  }
                   chapters={chaptersBySlug[episode.slug] ?? null}
                 />
               </li>
