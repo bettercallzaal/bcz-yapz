@@ -1,8 +1,10 @@
 ---
 title: BCZ YapZ w/Retrospect
 show: BCZ YapZ
+episode: 26
 guest: Retrospect
 guest_links:
+  - "x: @retrospect82"
   - "audius: https://audius.co/Retrospect"
 host: Zaal
 date: 2026-11-14T00:00:00.000Z
@@ -36,7 +38,7 @@ thumbnail_override: /thumbnails/2026-11-14-retrospect.jpg
 
 ## Transcript
 
-[00:00:00] Easy apps. I am here with Retrospect today. How are we doing today,
+[00:00:00] BCZ YapZ. I am here with Retrospect today. How are we doing today,
 
 [00:00:06] >> Very good, sir. How are you? >> I'm doing wonderful. I'm really excited to chat with you
 
