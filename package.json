@@ -16,7 +16,9 @@
     "new-ep": "python3 scripts/new-ep.py",
     "resolve-guest": "python3 scripts/resolve-guest.py",
     "draft-socials": "python3 scripts/draft-socials.py",
-    "assemble": "python3 scripts/assemble-episode.py"
+    "assemble": "python3 scripts/assemble-episode.py",
+    "ep:publish": "python3 scripts/ep-publish.py",
+    "test:py": "python3 -m unittest discover -s scripts -p \"test_*.py\""
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

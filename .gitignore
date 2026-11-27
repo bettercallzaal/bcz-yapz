@@ -13,3 +13,4 @@ dist/
 coverage/
 .serena/
 content/socials/
+__pycache__/
