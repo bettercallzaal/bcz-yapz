@@ -22,7 +22,7 @@ No database. No auth. No external services beyond YouTube. The episode list is g
 | Path | What |
 |------|------|
 | `src/app/page.tsx` | Episode list page (server component, revalidates hourly) |
-| `src/app/_components/` | HeroSection, EpisodeList, EpisodeListCard, EpisodeGridCard, FollowFooter |
+| `src/app/_components/` | HeroSection, EpisodeList, EpisodeListCard, FeaturedEpisode, FollowFooter, SearchBox, SeekButton, ShareButtons, StatsBar, TopicChips |
 | `src/lib/episodes.ts` | Reads `content/transcripts/*.md`, parses frontmatter via zod schema |
 | `src/lib/chapters.ts` | Parses YouTube chapter list out of `content/youtube-descriptions/<slug>.md` |
 | `src/lib/config.ts` | Show metadata, host links, follow URLs |
@@ -53,7 +53,7 @@ npm run test
 
 ## Voice
 
-Zaal hosts. Music-first, web3-curious, coordination-flavored. Episodes are 25-30 min and drop Tuesdays.
+Zaal hosts. Music-first, web3-curious, coordination-flavored. Episodes run about 20 to 50 minutes, recorded live (Twitch) and posted to YouTube. No fixed release day.
 
 ## History
 
