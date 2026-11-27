@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { parseChapters } from '../chapters'
+import { normalizeTimestamp, parseChapters } from '../chapters'
 
 describe('parseChapters', () => {
   it('returns null when description file does not exist', async () => {
@@ -19,5 +19,13 @@ describe('parseChapters', () => {
       title: expect.any(String),
     })
     expect(result[0].timestamp).toBe('0:00')
+  })
+
+  it('normalizes zero-padded timestamps to YouTube style', () => {
+    expect(normalizeTimestamp('00:00')).toBe('0:00')
+    expect(normalizeTimestamp('07:15')).toBe('7:15')
+    expect(normalizeTimestamp('12:30')).toBe('12:30')
+    expect(normalizeTimestamp('0:00')).toBe('0:00')
+    expect(normalizeTimestamp('01:05:00')).toBe('1:05:00')
   })
 })

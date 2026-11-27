@@ -13,6 +13,11 @@ const DESCRIPTIONS_DIR = path.join(
 
 const CHAPTER_LINE = /^(\d{1,2}:\d{2}(?::\d{2})?)\s*-\s*(.+)$/
 
+// YouTube style: no leading zero on the first field ("00:00" -> "0:00", "01:05:00" -> "1:05:00").
+export function normalizeTimestamp(ts: string): string {
+  return ts.replace(/^0(\d)/, '$1')
+}
+
 export async function parseChapters(slug: string): Promise<Chapter[] | null> {
   const filepath = path.join(DESCRIPTIONS_DIR, `${slug}.md`)
   if (!fs.existsSync(filepath)) return null
@@ -41,7 +46,7 @@ export async function parseChapters(slug: string): Promise<Chapter[] | null> {
     }
     const match = CHAPTER_LINE.exec(trimmed)
     if (match) {
-      chapters.push({ timestamp: match[1], title: match[2].trim() })
+      chapters.push({ timestamp: normalizeTimestamp(match[1]), title: match[2].trim() })
     }
   }
 
