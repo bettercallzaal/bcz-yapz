@@ -36,6 +36,10 @@ Deps: `gray-matter`, `zod`, `next`, `react`, `react-dom`. That's it.
 9. Regenerate Bonfire ingest: `npm run ingest:bonfire`.
 10. Commit + push. Vercel autodeploys to bczyapz.com.
 
+Shortcut for the local steps: `npm run ep:publish -- --slug <slug>` runs 4, 8 and 9 and prints which of the other steps are still open for that episode. Add `--check` to report without running anything. It never posts, uploads or pushes. Python tests: `npm run test:py`.
+
+`npm run assemble` reads the intro and outro from `BCZ_INTRO` / `BCZ_OUTRO` when set, else `~/Movies/templetes/`.
+
 ## Skill location
 
 The `bcz-yapz-description` skill lives in this repo at `.claude/skills/bcz-yapz-description/SKILL.md`. It loads in any Claude Code session started inside a clone of this repo and uses repo-relative paths only. If you change content paths, update the skill too.

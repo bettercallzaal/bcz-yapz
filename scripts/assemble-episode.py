@@ -9,11 +9,13 @@ Usage:
   python3 scripts/assemble-episode.py --source /path/to/raw.mp4 [--intro PATH] [--outro PATH] [--out PATH]
   python3 scripts/assemble-episode.py --source raw.mp4 --no-intro --no-outro   # normalize only
 
-Defaults pull the standing BCZ intro/outro from ~/Movies/templetes/.
+Defaults pull the standing BCZ intro/outro from ~/Movies/templetes/, or from the
+BCZ_INTRO and BCZ_OUTRO env vars when set.
 """
 
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -21,8 +23,9 @@ import tempfile
 from fractions import Fraction
 from pathlib import Path
 
-DEFAULT_INTRO = Path.home() / "Movies/templetes/Zaal Intro.MOV"
-DEFAULT_OUTRO = Path.home() / "Movies/templetes/Zaal Outro.MOV"
+# Override per machine with BCZ_INTRO / BCZ_OUTRO (absolute paths) or --intro / --outro.
+DEFAULT_INTRO = Path(os.environ.get("BCZ_INTRO") or Path.home() / "Movies/templetes/Zaal Intro.MOV")
+DEFAULT_OUTRO = Path(os.environ.get("BCZ_OUTRO") or Path.home() / "Movies/templetes/Zaal Outro.MOV")
 
 # One loudness target for every part so intro/main/outro sit at the same level.
 LOUDNORM = "loudnorm=I=-16:TP=-1.5:LRA=11"
@@ -91,12 +94,12 @@ def main() -> int:
     parts_src: list[Path] = []
     if not args.no_intro:
         if not args.intro.exists():
-            sys.exit(f"intro not found: {args.intro}")
+            sys.exit(f"intro not found: {args.intro} (set BCZ_INTRO, pass --intro, or --no-intro)")
         parts_src.append(args.intro)
     parts_src.append(args.source)
     if not args.no_outro:
         if not args.outro.exists():
-            sys.exit(f"outro not found: {args.outro}")
+            sys.exit(f"outro not found: {args.outro} (set BCZ_OUTRO, pass --outro, or --no-outro)")
         parts_src.append(args.outro)
 
     target = probe(args.source)
