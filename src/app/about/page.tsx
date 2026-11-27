@@ -128,7 +128,7 @@ export default async function AboutPage() {
                 Watch live
               </div>
               <div className="mt-1 text-xs text-white/60">
-                Tuesdays on Twitch when streaming
+                On Twitch when streaming
               </div>
             </Link>
             <Link

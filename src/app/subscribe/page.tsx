@@ -29,7 +29,7 @@ interface Channel {
 const channels: Channel[] = [
   {
     label: 'YouTube',
-    desc: 'Full video episodes, drops first here every Tuesday.',
+    desc: 'Full video episodes, posted here first.',
     url: 'https://youtube.com/@bettercallzaal',
     primary: true,
   },
@@ -92,7 +92,7 @@ export default function SubscribePage() {
             Subscribe
           </h1>
           <p className="mt-3 max-w-2xl text-sm text-white/65 sm:text-base">
-            New BCZ YapZ episodes drop weekly on Tuesdays. Pick the
+            New BCZ YapZ episodes post here as they are recorded. Pick the
             channel that fits your habits.
           </p>
 

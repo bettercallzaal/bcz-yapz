@@ -41,7 +41,7 @@ export function HeroSection() {
             {hostName}
           </Link>
           <span className="mx-2 text-white/30">·</span>
-          New episodes Tuesdays
+          New episodes as they are recorded
         </p>
         <div className="mt-7 flex flex-wrap gap-2">
           <Link
