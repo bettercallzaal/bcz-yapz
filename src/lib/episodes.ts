@@ -1,3 +1,4 @@
+import { thumbnailUrlFor } from './thumbnail'
 import fs from 'node:fs'
 import path from 'node:path'
 import matter from 'gray-matter'
@@ -7,15 +8,6 @@ const TRANSCRIPTS_DIR = path.join(process.cwd(), 'content/transcripts')
 
 function slugFromFilename(filename: string): string {
   return filename.replace(/\.md$/, '')
-}
-
-function buildThumbnailUrl(
-  videoId: string | undefined,
-  override: string | null | undefined
-): string | null {
-  if (override) return override
-  if (!videoId) return null
-  return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
 }
 
 function pickDisplayDate(
@@ -58,10 +50,7 @@ export async function getAllEpisodes(): Promise<Episode[]> {
       frontmatter,
       hasYoutube: Boolean(frontmatter.youtube_url),
       displayDate: pickDisplayDate(frontmatter.published, frontmatter.date),
-      thumbnailUrl: buildThumbnailUrl(
-        frontmatter.youtube_video_id,
-        frontmatter.thumbnail_override
-      ),
+      thumbnailUrl: thumbnailUrlFor(slug, frontmatter.thumbnail_override),
     })
   }
 

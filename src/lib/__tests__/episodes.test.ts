@@ -40,17 +40,14 @@ describe('getAllEpisodes', () => {
     }
   })
 
-  it('returns thumbnailUrl from override, video_id, or null', async () => {
+  it('returns thumbnailUrl from the override, else the drawn card', async () => {
     const episodes = await getAllEpisodes()
+    expect(episodes.length).toBeGreaterThan(0)
     for (const ep of episodes) {
       if (ep.frontmatter.thumbnail_override) {
         expect(ep.thumbnailUrl).toBe(ep.frontmatter.thumbnail_override)
-      } else if (ep.frontmatter.youtube_video_id) {
-        expect(ep.thumbnailUrl).toBe(
-          `https://i.ytimg.com/vi/${ep.frontmatter.youtube_video_id}/maxresdefault.jpg`
-        )
       } else {
-        expect(ep.thumbnailUrl).toBeNull()
+        expect(ep.thumbnailUrl).toBe(`/thumb/${ep.slug}`)
       }
     }
   })
