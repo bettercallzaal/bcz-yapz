@@ -1,6 +1,7 @@
 import { HeroSection } from './_components/HeroSection'
 import { FeaturedEpisode } from './_components/FeaturedEpisode'
 import { EpisodeList } from './_components/EpisodeList'
+import { ArchiveTabs } from './_components/ArchiveTabs'
 import { FollowFooter } from './_components/FollowFooter'
 import { StatsBar } from './_components/StatsBar'
 import { getAllEpisodes } from '@/lib/episodes'
@@ -25,7 +26,9 @@ export default async function BczYapzPage() {
         <FeaturedEpisode episode={latest} />
       ) : null}
       {/* Every episode, featured one included, so the count and search cover all of them. */}
-      <EpisodeList episodes={episodes} chaptersBySlug={chaptersBySlug} />
+      <ArchiveTabs>
+        <EpisodeList episodes={episodes} chaptersBySlug={chaptersBySlug} />
+      </ArchiveTabs>
       <FollowFooter />
     </main>
   )
