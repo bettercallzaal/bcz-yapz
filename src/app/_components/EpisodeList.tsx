@@ -6,8 +6,7 @@ import type { Chapter } from '@/lib/chapters'
 import { EpisodeListCard } from './EpisodeListCard'
 import { SearchBox } from './SearchBox'
 import { TopicChips } from './TopicChips'
-
-const TOP_TOPIC_LIMIT = 12
+import { matchesGuest, sharedTopics } from '@/lib/archive'
 
 interface EpisodeListProps {
   episodes: Episode[]
@@ -16,31 +15,40 @@ interface EpisodeListProps {
 
 export function EpisodeList({ episodes, chaptersBySlug }: EpisodeListProps) {
   const [activeTopic, setActiveTopic] = useState<string | null>(null)
+  const [guestQuery, setGuestQuery] = useState('')
 
+  // Only topics two or more episodes share; one-off tags made the chips thin.
   const { topTopics, topicCounts } = useMemo(() => {
-    const counts: Record<string, number> = {}
-    for (const ep of episodes) {
-      for (const topic of ep.frontmatter.topics) {
-        counts[topic] = (counts[topic] ?? 0) + 1
-      }
-    }
-    const sorted = Object.entries(counts)
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-      .slice(0, TOP_TOPIC_LIMIT)
-      .map(([t]) => t)
-    return { topTopics: sorted, topicCounts: counts }
+    const shared = sharedTopics(episodes)
+    return { topTopics: shared.map(([t]) => t), topicCounts: Object.fromEntries(shared) }
   }, [episodes])
 
-  const filtered = useMemo(() => {
-    if (!activeTopic) return episodes
-    return episodes.filter((ep) => ep.frontmatter.topics.includes(activeTopic))
-  }, [episodes, activeTopic])
+  const filtered = useMemo(
+    () =>
+      episodes.filter(
+        (ep) =>
+          (!activeTopic || ep.frontmatter.topics.includes(activeTopic)) &&
+          matchesGuest(ep, guestQuery)
+      ),
+    [episodes, activeTopic, guestQuery]
+  )
+  const isFiltered = Boolean(activeTopic) || guestQuery.trim() !== ''
 
   return (
-    <section className="bg-[#0a1628] px-4 pb-16 pt-10 sm:px-6 lg:px-8">
+    <section className="bg-[#0a1628] px-4 pb-16 pt-6 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-5">
+        <div className="mb-5 grid gap-3 sm:grid-cols-[1fr_16rem]">
           <SearchBox />
+          <label className="block">
+            <span className="sr-only">Filter by guest or project</span>
+            <input
+              type="search"
+              value={guestQuery}
+              onChange={(e) => setGuestQuery(e.target.value)}
+              placeholder="Guest or project"
+              className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-[#f5a623]/60 focus:outline-none"
+            />
+          </label>
         </div>
         <div className="mb-5">
           <TopicChips
@@ -53,10 +61,12 @@ export function EpisodeList({ episodes, chaptersBySlug }: EpisodeListProps) {
         </div>
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-xl font-bold text-white sm:text-2xl">
-            {activeTopic ? (
+            {isFiltered ? (
               <>
                 <span className="text-white/45">Filtered:</span>{' '}
-                {activeTopic.replace(/-/g, ' ')}
+                {[activeTopic?.replace(/-/g, ' '), guestQuery.trim() ? `"${guestQuery.trim()}"` : null]
+                  .filter(Boolean)
+                  .join(' + ')}
               </>
             ) : (
               'All episodes'

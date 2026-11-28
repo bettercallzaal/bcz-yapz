@@ -21,7 +21,7 @@ export function EpisodeListCard({
   return (
     <article className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] transition hover:border-white/25 hover:bg-white/[0.05]">
       <Link href={`/ep/${episode.slug}`} className="block">
-        <div className="grid grid-cols-1 gap-0 sm:grid-cols-[280px_1fr] md:grid-cols-[320px_1fr]">
+        <div className="grid grid-cols-1 gap-0 sm:grid-cols-[240px_1fr] md:grid-cols-[280px_1fr]">
           <div
             className={`relative aspect-video w-full overflow-hidden bg-black sm:aspect-auto sm:h-full ${hasYoutube ? '' : 'opacity-50'}`}
           >
@@ -31,7 +31,7 @@ export function EpisodeListCard({
                   src={thumbnailUrl}
                   alt={`${frontmatter.guest} - BCZ YapZ${epNumber ? ` episode ${epNumber}` : ''}`}
                   fill
-                  sizes="(max-width: 640px) 100vw, 320px"
+                  sizes="(max-width: 640px) 100vw, 280px"
                   className="object-cover transition group-hover:scale-105"
                 />
                 {hasYoutube ? (
@@ -59,7 +59,7 @@ export function EpisodeListCard({
               </div>
             ) : null}
           </div>
-          <div className="flex flex-col p-5 sm:p-6">
+          <div className="flex flex-col p-4 sm:p-5">
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/55">
               <span>{episode.displayDate ?? 'TBD'}</span>
               {episode.durationMin ? (
@@ -71,7 +71,7 @@ export function EpisodeListCard({
               {chapters && chapters.length > 0 ? (
                 <>
                   <span>·</span>
-                  <span>{chapters.length} chapters</span>
+                  <span className="text-[#f5a623]/80">{chapters.length} chapters</span>
                 </>
               ) : null}
               {!hasYoutube ? (
@@ -81,17 +81,16 @@ export function EpisodeListCard({
                 </>
               ) : null}
             </div>
-            <h2 className="mt-1.5 text-xl font-bold leading-tight text-white sm:text-2xl">
+            <h2 className="mt-1 text-xl font-bold leading-tight text-white sm:text-2xl">
               {frontmatter.guest}
-              {frontmatter.guest_org ? (
-                <span className="font-semibold text-white/55">
-                  {' · '}
-                  {frontmatter.guest_org}
-                </span>
-              ) : null}
             </h2>
+            {frontmatter.guest_org ? (
+              <p className="mt-0.5 text-sm font-semibold text-[#f5a623]">
+                {frontmatter.guest_org}
+              </p>
+            ) : null}
             {frontmatter.summary ? (
-              <p className="mt-2.5 line-clamp-3 text-sm text-white/70 sm:text-[15px]">
+              <p className="mt-2 line-clamp-2 text-sm text-white/70">
                 {frontmatter.summary}
               </p>
             ) : null}
