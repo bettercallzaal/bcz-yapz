@@ -28,6 +28,24 @@ function pickDisplayDate(
   return null
 }
 
+type Sortable = Pick<Episode, 'slug' | 'displayDate'> & {
+  frontmatter: Pick<Episode['frontmatter'], 'episode'>
+}
+
+/**
+ * Newest first. Same date (two episodes recorded the same day): higher
+ * episode number first, then slug, so the order never depends on file order.
+ */
+export function compareEpisodes(a: Sortable, b: Sortable): number {
+  const aDate = a.displayDate ?? ''
+  const bDate = b.displayDate ?? ''
+  return (
+    bDate.localeCompare(aDate) ||
+    (b.frontmatter.episode ?? 0) - (a.frontmatter.episode ?? 0) ||
+    a.slug.localeCompare(b.slug)
+  )
+}
+
 export async function getAllEpisodes(): Promise<Episode[]> {
   if (!fs.existsSync(TRANSCRIPTS_DIR)) return []
 
@@ -67,16 +85,7 @@ export async function getAllEpisodes(): Promise<Episode[]> {
     })
   }
 
-  episodes.sort((a, b) => {
-    const aDate = a.displayDate ?? ''
-    const bDate = b.displayDate ?? ''
-    // Same date (two episodes recorded the same day): higher episode number first.
-    return (
-      bDate.localeCompare(aDate) ||
-      (b.frontmatter.episode ?? 0) - (a.frontmatter.episode ?? 0) ||
-      a.slug.localeCompare(b.slug)
-    )
-  })
+  episodes.sort(compareEpisodes)
 
   return episodes
 }
