@@ -1,3 +1,4 @@
+import { episodeMinutes } from './duration'
 import fs from 'node:fs'
 import path from 'node:path'
 import matter from 'gray-matter'
@@ -62,13 +63,19 @@ export async function getAllEpisodes(): Promise<Episode[]> {
         frontmatter.youtube_video_id,
         frontmatter.thumbnail_override
       ),
+      durationMin: episodeMinutes(frontmatter.duration_min, parsed.content),
     })
   }
 
   episodes.sort((a, b) => {
     const aDate = a.displayDate ?? ''
     const bDate = b.displayDate ?? ''
-    return bDate.localeCompare(aDate)
+    // Same date (two episodes recorded the same day): higher episode number first.
+    return (
+      bDate.localeCompare(aDate) ||
+      (b.frontmatter.episode ?? 0) - (a.frontmatter.episode ?? 0) ||
+      a.slug.localeCompare(b.slug)
+    )
   })
 
   return episodes

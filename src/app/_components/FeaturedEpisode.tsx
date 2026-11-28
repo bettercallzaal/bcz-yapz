@@ -61,10 +61,10 @@ export function FeaturedEpisode({ episode }: FeaturedEpisodeProps) {
             <div className="flex flex-col justify-center p-6 sm:p-8">
               <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/55">
                 <span>{episode.displayDate ?? 'TBD'}</span>
-                {frontmatter.duration_min ? (
+                {episode.durationMin ? (
                   <>
                     <span>·</span>
-                    <span>{frontmatter.duration_min} min</span>
+                    <span>{episode.durationMin} min</span>
                   </>
                 ) : null}
                 {!hasYoutube ? (

@@ -10,7 +10,7 @@ export default async function OpengraphImage() {
   const episodes = await getAllEpisodes()
   const published = episodes.filter((e) => e.frontmatter.youtube_url)
   const totalMinutes = published.reduce(
-    (sum, e) => sum + (e.frontmatter.duration_min ?? 0),
+    (sum, e) => sum + (e.durationMin ?? 0),
     0
   )
   const totalHours = Math.round(totalMinutes / 60)

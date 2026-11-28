@@ -7,10 +7,10 @@ interface StatsBarProps {
 export function StatsBar({ episodes }: StatsBarProps) {
   const published = episodes.filter((e) => e.frontmatter.youtube_url)
   const totalMinutes = published.reduce(
-    (sum, e) => sum + (e.frontmatter.duration_min ?? 0),
+    (sum, e) => sum + (e.durationMin ?? 0),
     0
   )
-  const totalHours = (totalMinutes / 60).toFixed(0)
+  const totalHours = Math.floor(totalMinutes / 60)
   const topics = new Set<string>()
   for (const e of published) for (const t of e.frontmatter.topics) topics.add(t)
   const guestCount = published.length

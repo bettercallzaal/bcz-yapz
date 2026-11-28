@@ -62,10 +62,10 @@ export function EpisodeListCard({
           <div className="flex flex-col p-5 sm:p-6">
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/55">
               <span>{episode.displayDate ?? 'TBD'}</span>
-              {frontmatter.duration_min ? (
+              {episode.durationMin ? (
                 <>
                   <span>·</span>
-                  <span>{frontmatter.duration_min} min</span>
+                  <span>{episode.durationMin} min</span>
                 </>
               ) : null}
               {chapters && chapters.length > 0 ? (

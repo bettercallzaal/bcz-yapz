@@ -60,4 +60,6 @@ export interface Episode {
   hasYoutube: boolean
   displayDate: string | null
   thumbnailUrl: string | null
+  /** Length in minutes: frontmatter duration_min, else the last transcript timestamp. */
+  durationMin: number | null
 }

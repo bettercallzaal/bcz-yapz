@@ -15,7 +15,7 @@ export default async function BczYapzPage() {
     chaptersBySlug[ep.slug] = await parseChapters(ep.slug)
   }
 
-  const [latest, ...rest] = episodes
+  const latest = episodes[0]
 
   return (
     <main className="min-h-screen bg-[#0a1628]">
@@ -24,7 +24,8 @@ export default async function BczYapzPage() {
       {latest ? (
         <FeaturedEpisode episode={latest} />
       ) : null}
-      <EpisodeList episodes={rest} chaptersBySlug={chaptersBySlug} />
+      {/* Every episode, featured one included, so the count and search cover all of them. */}
+      <EpisodeList episodes={episodes} chaptersBySlug={chaptersBySlug} />
       <FollowFooter />
     </main>
   )
