@@ -180,7 +180,7 @@ export default function SubscribePage() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-xl border border-white/10 bg-white/[0.04] p-6">
+          <div id="guest" className="mt-12 scroll-mt-24 rounded-xl border border-white/10 bg-white/[0.04] p-6">
             <h2 className="text-lg font-semibold text-white">
               Want to be a guest?
             </h2>

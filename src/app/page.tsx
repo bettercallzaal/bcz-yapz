@@ -19,7 +19,17 @@ export default async function BczYapzPage() {
 
   return (
     <main className="min-h-screen bg-[#0a1628]">
-      <HeroSection />
+      <HeroSection
+        latest={
+          latest
+            ? {
+                slug: latest.slug,
+                episode: latest.frontmatter.episode,
+                guest: latest.frontmatter.guest,
+              }
+            : null
+        }
+      />
       <StatsBar episodes={episodes} />
       {latest ? (
         <FeaturedEpisode episode={latest} />
